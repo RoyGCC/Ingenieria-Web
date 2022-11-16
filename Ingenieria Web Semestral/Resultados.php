@@ -11,7 +11,7 @@
      <script src="./resources/js/templates.js"></script>
 </head>
 
-<body>
+<body class="general_backgroundImage">
      <div id="general_header"></div>
 
      <section>
