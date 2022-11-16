@@ -8,9 +8,12 @@
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <link rel='stylesheet' href='resources/main.css'>
   <link rel="icon" href="resources/img/Logo.png">
+
+  <!-- A esta página le falta optimización de css  -Miguel --> 
 </head>
 
-<body class="bodyRegister" style="background-color: #7f1947;">
+
+<body class="bodyRegister general_backgroundImage">
   <div class="register-box">
     <img src="resources/img/Logo.png" class="avatar" alt="Avatar Image">
     <h1>Registrarse</h1>

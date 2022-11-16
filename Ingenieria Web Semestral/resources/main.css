@@ -14,59 +14,84 @@
   --fuente_formularios: 'Roboto', sans-serif;
 }
 
-/*Home Styles*/
-/* body{
-  background-image:url("img/Fondo4.png");
-  background-repeat: no-repeat;
-  background-position: center;
 
-  background-size: cover;
-}
-*/
-.sechome {
+#general_header{
   
-  background-image:url("img/Fondo4.png");
-  background-size: 100%;
-  height: 710px;
-  overflow: scroll;
+}
+#general_header:out-of-range{
+  position: fixed;
+}
+
+.general_backgroundImage{
+  background-image: url("img/Fondo4.png");
+  background-size:cover;
 }
 .secequipos {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   
-  background-image:url("img/Fondo4.png");
-  background-size: 100%;
-  height: 710px;
-  overflow: auto;
-  
+
 }
 
-.extras{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  margin-left: 0px;
-  padding: 20%;
-  margin-top: -15%;
-  justify-content: center;
-  align-content: center;
+.equipo{
+  margin: 10px;
+  border-radius: 5%;
+  overflow: hidden;
+}
+
+.equipo a{
+  text-decoration: none;
+  color: #000;
+}
+
+.equipoimg{
+  height: 100px;
+  width: 200px;
+}
+
+.equipocontainer{
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
+
+
+
+
+
+
+
+.sechome {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  justify-content: space-around;
+}
+
+
 
 .contenidoextra{
   display: flex;
-  position: relative;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   background-color: #cdb190;
-  height: 500px;
-  width: 325px;
-  border-radius: 10%;
+  height: 325px;
+  width: 300px;
+  border-radius: 1%;
+  margin-bottom: 10px;
 }
 
 .extra2{
-  display: grid;
-  position: absolute;
-  margin-top: 30%;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
   width: 85%;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .laebb {
@@ -77,11 +102,11 @@
   margin-bottom: 400px;
 }
 .estadio {
-  width: 280px;
+  width: 100%;
   height: 200px;
-  position: absolute;
-  margin-bottom: 275px;
-  border-radius: 5%;
+
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
 }
 
 .bodyHome {
@@ -104,19 +129,17 @@
 
 .navbar-home{
   background-color: #ac224e;
-  position: sticky;
   top: 0;
   z-index: 1000;
-  
 }
 
 .navbar-home ul{
-
 display:flex;
 flex-direction: row;
-justify-content:space-between;
+justify-content:space-around;
 padding:15px;
 list-style:none;
+flex-wrap: wrap;
 
 }
 
@@ -265,39 +288,33 @@ margin-bottom: 20px;
 .bodyLogin {
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .login-box {
-  width: 320px;
-  height: 420px;
+  margin-top: 7%;
+  width: 370px;
+  height: 450px;
   background: #000;
   color: #fff;
   font-family: var(--fuente_formularios);
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  box-sizing: border-box;
-  padding: 70px 30px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 30px;
   border-radius: 10px;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.login-box .avatar {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  top: -32px;
-  left: calc(50% - 50px);
-}
+.avatar {
 
-.login-box h1 {
-  margin: 0;
-  padding: 0 0 20px;
-  text-align: center;
-  font-family: var(--fuente_Header);
-  font-size: 18px;
+  width: 140px;
+  height: 140px;
   margin-bottom: 20px;
 }
+
+
 
 .login-box label {
   margin: 0;
@@ -354,7 +371,6 @@ margin-bottom: 20px;
 .bodyregister {
   margin: 0;
   padding: 0;
-  background-color: #C8EFFD;
   
 }
 
@@ -372,15 +388,13 @@ margin-bottom: 20px;
   padding: 70px 30px;
   border-radius: 20px;
   margin-top: 40px;
+  padding-bottom: 40px;
+  overflow: hidden;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-}
-
-.avatar {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  top: -30px;
-  left: calc(50% - 50px);
 }
 
 .register-box h1 {
@@ -440,52 +454,13 @@ margin-bottom: 20px;
   color: #fff;
 }
 
-.equipos {
-  margin-top: 50px;
-  margin-left: 50px;
-  margin-right: 50px;
-  display: grid;
-  grid-template-columns: 4fr 4fr 4fr 4fr;
-  grid-template-rows: 220px;
-  gap: 0 100px;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-
-}
-
-.nombresequipos {
-  margin-top: 10px;
-  margin-left: 50px;
-  margin-right: 50px;
-  display: grid;
-  grid-template-columns: 4fr 4fr 4fr 4fr;
-  grid-template-rows: 5px;
-  gap: 0 100px;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  color: #fff;
-  text-decoration: none;
-  text-decoration-line: none;
-  text-decoration-color: #ffffff;
-
-}
-.deco{
-  text-decoration: none;
-  text-decoration-line: none;
-  text-decoration-color: #ffffff;
-  color: #fff;
-
-}
 
 @media only screen and (max-width: 600px) {
-  .navbar-home{
+  /*.navbar-home{
     background-color: #ffffff;
-    position: sticky;
     top: 0;
     
-  }
+  }*/
   
 }
 
