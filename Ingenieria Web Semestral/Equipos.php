@@ -13,6 +13,7 @@
      <section class="secequipos">
           
                <?php
+                    $conn_bd = mysqli_connect('localhost', 'server', '', 'humanrightsaresecondary', 3306);
                     $sql_query = "SELECT * FROM equipos ORDER BY grupo ASC;";
                     if ($conn_bd) {
                          $result = mysqli_query($conn_bd,$sql_query);
