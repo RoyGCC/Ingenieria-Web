@@ -1,4 +1,45 @@
-<!DOCTYPE html>
+<?php
+session_start();
+  $error = "";
+
+  if($_SERVER['REQUEST_METHOD']== "POST")
+  {
+    $arr['username'] = $_POST['username'];
+    $arr['password'] = $_POST['password'];
+
+    $query = "select id from usuarios where username = '".$arr['username']."' && password = '".$arr['password']."'";
+    $conn_bd = mysqli_connect('localhost', 'server', '', 'humanrightsaresecondary', 3306);
+    
+    if($conn_bd){
+      $stm = mysqli_query($conn_bd, $query);
+      $count = mysqli_num_rows($stm);
+      if($count == 0) {
+        echo "error";
+      }
+      else
+      {
+      $stm = mysqli_fetch_assoc($stm);
+          $_SESSION['user'] = $stm['id'];
+          $_SESSION['myrank'] = $stm['rank'];
+          header("Location: Home.php");
+      }
+
+      
+
+
+
+
+
+      /*
+      if($error == "")
+      {
+        header("Location: Home.php");
+        die;
+      }*/
+    }
+  }
+?>
+
 <html>
 
 <head>

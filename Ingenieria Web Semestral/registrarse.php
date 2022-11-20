@@ -1,4 +1,39 @@
-<!DOCTYPE html>
+<?php
+  $error = "";
+
+  if($_SERVER['REQUEST_METHOD']== "POST")
+  {
+    if(!$DB = new PDO("mysql:host=localhost;dbname=humanrightsaresecondary","root",""))
+    {
+      die("error");
+    }
+    
+    $arr['username'] = $_POST['username'];
+    $arr['password'] = $_POST['password'];
+    $arr['nombre'] = $_POST['nombre'];
+    $arr['email'] = $_POST['email'];
+    $arr['rank'] = "user";
+
+    $query = "insert into usuarios (username, password, nombre, email, rank) values (:username, :password, :nombre, :email, :rank)";
+    $stm = $DB->prepare($query);
+    if($stm)
+    {
+      $check = $stm->execute($arr);
+      if(!$check)
+      {
+        $error = "error";
+      }
+      if($error == "")
+      {
+        header("Location: loginsemestral.php");
+        die;
+      }
+    }
+
+  }
+
+?>
+
 <html>
 
 <head>
@@ -17,20 +52,20 @@
   <div class="register-box">
     <img src="resources/img/Logo.png" class="avatar" alt="Avatar Image">
     <h1>Registrarse</h1>
-    <form action="" method="post">
+    <form method="post">
       <!-- FirstNAME INPUT -->
-      <label for="Firstname">Nombre</label>
-      <input type="text" placeholder="Escriba nombre" name="Firstname" id="Firstname">
+      <label for="Firstname">Nombre de Usuario</label>
+      <input type="text" placeholder="Escriba nombre de usuario" name="username" id="username">
       <!-- LAST NAME INPUT-->
-      <label for="Lastname">Apellido</label>
-      <input type="text" placeholder="Escriba apellido" name="Lastname" id="Lastname">
+      <label for="Lastname">Nombre</label>
+      <input type="text" placeholder="Escriba nombre" name="nombre" id="nombre">
       <!-- EMAIL INPUT -->
-      <label for="CED">Edad</label>
-      <input type="text" placeholder="Escriba la edad" name="edad" id="edad">
+      <label for="CED">Email</label>
+      <input type="email" placeholder="Escriba el email" name="email" id="email">
       <!-- PASSWORD INPUT -->
       <label for="password">Contraseña</label>
       <input type="password" placeholder="Escriba contraseña" name="password" id="password">
-
+      <!-- Enviar -->
       <input type="submit" value="Registrarse">
     </form>
   </div>
