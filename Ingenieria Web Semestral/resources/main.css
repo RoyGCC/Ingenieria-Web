@@ -81,12 +81,12 @@
   background-color: #cdb190;
   height: 325px;
   width: 300px;
-  border-radius: 1%;
+  border-radius: 5%;
   margin-bottom: 10px;
 }
 
 .extra2{
-  margin-top: 5px;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   width: 85%;
@@ -104,9 +104,6 @@
 .estadio {
   width: 100%;
   height: 200px;
-
-  border-bottom-left-radius: 5%;
-  border-bottom-right-radius: 5%;
 }
 
 .bodyHome {
