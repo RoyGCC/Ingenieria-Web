@@ -133,7 +133,7 @@
 .navbar-home ul{
 display:flex;
 flex-direction: row;
-justify-content:space-between;
+justify-content:space-around;
 padding:15px;
 list-style:none;
 flex-wrap: wrap;
