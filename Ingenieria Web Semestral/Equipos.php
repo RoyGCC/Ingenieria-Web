@@ -1,6 +1,4 @@
-<!DOCTYPE html>
 <html>
-
 <head>
      <meta charset='utf-8'>
      <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -10,63 +8,30 @@
      <link rel="icon" href="resources/img/Logo.png">
      <script src="./resources/js/templates.js"></script>
 </head>
-
 <body class="general_backgroundImage">
      <div id="general_header"></div>
      <section class="secequipos">
-          <div class="equipo">
-               <a class="equipocontainer" href=".">
-                    <img class="equipoimg" src="./resources/img/Banderas/Brasil.webp">
-                    <span>Brasiu</span>
-               </a>
-          </div>
-          <div class="equipo">
-               <a class="equipocontainer" href=".">
-                    <img class="equipoimg" src="./resources/img/Banderas/Brasil.webp">
-                    <span>Brasiu</span>
-               </a>
-          </div>
-          <div class="equipo">
-               <a class="equipocontainer" href=".">
-                    <img class="equipoimg" src="./resources/img/Banderas/Brasil.webp">
-                    <span>Brasiu</span>
-               </a>
-          </div>
-          <div class="equipo">
-               <a class="equipocontainer" href=".">
-                    <img class="equipoimg" src="./resources/img/Banderas/Brasil.webp">
-                    <span>Brasiu</span>
-               </a>
-          </div>
-          <div class="equipo">
-               <a class="equipocontainer" href=".">
-                    <img class="equipoimg" src="./resources/img/Banderas/Brasil.webp">
-                    <span>Brasiu</span>
-               </a>
-          </div>
-          <div class="equipo">
-               <a class="equipocontainer" href=".">
-                    <img class="equipoimg" src="./resources/img/Banderas/Brasil.webp">
-                    <span>Brasiu</span>
-               </a>
-          </div>
-          <div class="equipo">
-               <a class="equipocontainer" href=".">
-                    <img class="equipoimg" src="./resources/img/Banderas/Brasil.webp">
-                    <span>Brasiu</span>
-               </a>
-          </div>
-          <div class="equipo">
-               <a class="equipocontainer" href=".">
-                    <img class="equipoimg" src="./resources/img/Banderas/Brasil.webp">
-                    <span>Brasiu</span>
-               </a>
-          </div>
           
+               <?php
+                    $conn_bd = mysqli_connect('localhost', 'server', '12345', 'humanrightsaresecondary', 3306);
+                    $sql_query = "SELECT * FROM equipos ORDER BY grupo DESC;";
+                    if ($conn_bd) {
+                         $result = mysqli_query($conn_bd,$sql_query);
+
+                         while ($equipos = mysqli_fetch_assoc($result)){
+                           echo "<div class='equipo'>
+                                   <a class='equipocontainer' href=''>
+                                   <img class='equipoimg' src='./resources/img/Banderas/". $equipos['dir_bandera'] . "'>
+                                   <span>". $equipos['equipo'] ."</span>
+                                   </a>
+                                   </div>";   
+                         }
+                         $conn_bd->close();
+                    }
+               ?>
      </section>
      <script>
           headerTemplate()
      </script>
 </body>
-
 </html>
