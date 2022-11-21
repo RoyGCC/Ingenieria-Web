@@ -62,6 +62,32 @@ INSERT INTO `equipos` (`id`, `equipo`, `grupo`, `dir_bandera`) VALUES
 	(32, 'Uruguay', 'H', 'Uruguay.webp');
 /*!40000 ALTER TABLE `equipos` ENABLE KEYS */;
 
+-- Volcando estructura para tabla humanrightsaresecondary.usuarios
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `id` int(25) NOT NULL AUTO_INCREMENT,
+  `Username` varchar(25) NOT NULL,
+  `Password` varchar(25) NOT NULL,
+  `Nombre` varchar(25) NOT NULL,
+  `Email` varchar(25) NOT NULL,
+  `Rank` varchar(25) NOT NULL,
+  `id_equipo_fav` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `Username` (`Username`),
+  KEY `Password` (`Password`),
+  KEY `Rank` (`Rank`),
+  KEY `Email` (`Email`),
+  KEY `Nombre` (`Nombre`),
+  KEY `FK_usuarios_equipos` (`id_equipo_fav`),
+  CONSTRAINT `FK_usuarios_equipos` FOREIGN KEY (`id_equipo_fav`) REFERENCES `equipos` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla humanrightsaresecondary.usuarios: ~2 rows (aproximadamente)
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` (`id`, `Username`, `Password`, `Nombre`, `Email`, `Rank`, `id_equipo_fav`) VALUES
+	(34, 'RoyGCC', '12345', 'Roy', 'roycarrington20@gmail.com', 'user', 3),
+	(35, 'MiguelV', '1234', 'Miguel', 'roygcc2009@gmail.com', 'admin', 9);
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
