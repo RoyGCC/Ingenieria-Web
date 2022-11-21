@@ -1,9 +1,9 @@
 <?php
-
 session_start();
-echo $_SESSION['user'];
-echo $_SESSION['myrank'];
-
+if (!empty($_SESSION['user'])) {
+     echo $_SESSION['user'];
+     echo $_SESSION['myrank'];
+}
 ?>
 <html>
 
