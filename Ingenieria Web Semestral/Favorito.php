@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<?php
+session_start();
+
+include "acceso.php";
+acceso('ADMIN');
+
+?>
+
 <html>
 
 <head>

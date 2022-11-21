@@ -1,3 +1,7 @@
+<?php
+
+session_start();
+?>
 <html>
 
 <head>
@@ -51,6 +55,9 @@
                     <span>La cultura Catarí no permite los siguientes comportamientos.<br> Recuerda que los derechos humanos son opcionales aquí</span>
                </div>
           </div>
+          <div class="contenidoextra">
+               <a href="logout.php">logout</a>
+          </div>     
      </section>
 
 
@@ -58,6 +65,7 @@
           headerTemplate()
           
      </script>
+     
 </body>
 
 </html>
