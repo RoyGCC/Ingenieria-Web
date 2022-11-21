@@ -7,7 +7,7 @@ session_start();
     $arr['username'] = $_POST['username'];
     $arr['password'] = $_POST['password'];
 
-    $query = "select id from usuarios where username = '".$arr['username']."' && password = '".$arr['password']."'";
+    $query = "select id, rank from usuarios where username = '".$arr['username']."' && password = '".$arr['password']."'";
     $conn_bd = mysqli_connect('localhost', 'server', '', 'humanrightsaresecondary', 3306);
     
     if($conn_bd){
