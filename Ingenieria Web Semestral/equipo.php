@@ -61,6 +61,26 @@ if(!$_GET['equipoSeleccionado']){
             ?>
         </section>
 
+        <section class="secequipos">
+               <?php
+               include('config.php');
+                $sql_query = "SELECT * FROM jugadores_equipo;";
+               if ($conn_bd) {
+                    $result = mysqli_query($conn_bd, $sql_query);
+
+                    while ($equipos = mysqli_fetch_assoc($result)) {
+                         echo "<div class='equipo'>
+                                   
+                                   <img class='equipoimg' src='./resources/img/EQUIPOS/" . $equipos['marco_dir'] . "'>
+                                   
+                                   </a>
+                                   </div>";
+                    }
+                    $conn_bd->close();
+               }
+               ?>
+          </section>
+
     </form>
 
     <script>
