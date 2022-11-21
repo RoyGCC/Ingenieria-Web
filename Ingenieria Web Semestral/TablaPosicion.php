@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php
+
+session_start();
+echo $_SESSION['user'];
+echo $_SESSION['myrank'];
+
+?>
 <html>
 
 <head>
@@ -21,7 +27,12 @@
 
      </section>
      <script>
-          headerTemplate()
+          <?php
+          if (!empty($_SESSION['user'])) {
+               echo "headerTemplateLogged()";
+          } else {
+               echo "headerTemplateNotLogged()";
+          } ?>
      </script>
 </body>
 
