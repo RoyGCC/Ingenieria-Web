@@ -34,7 +34,7 @@ if (!empty($_SESSION['user'])) {
                     while ($equipos = mysqli_fetch_assoc($favorite_result)) {
                          echo "
                          <div class='equipo'>
-                              <a class='equipocontainer' href=''>
+                              <a class='equipocontainer' href='equipo.php?equipoSeleccionado=". $equipos['id'] ."'>
                               <span>" . $equipos['grupo'] . "</span>
                               <img class='equipoimg' src='./resources/img/Banderas/" . $equipos['dir_bandera'] . "'>
                               <span>" . $equipos['equipo'] . "</span>
@@ -54,7 +54,7 @@ if (!empty($_SESSION['user'])) {
                     while ($equipos = mysqli_fetch_assoc($result)) {
                          echo "<div class='equipo'>
 
-                                   <a class='equipocontainer' href=''>
+                                   <a class='equipocontainer' href='equipo.php?equipoSeleccionado=" . $equipos['id'] . "'>
                                    <span>" . $equipos['grupo'] . "</span>
                                    <img class='equipoimg' src='./resources/img/Banderas/" . $equipos['dir_bandera'] . "'>
                                    <span>" . $equipos['equipo'] . "</span>
