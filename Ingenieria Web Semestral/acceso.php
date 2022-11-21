@@ -9,4 +9,4 @@ function acceso($rank)
     }
 }
 
-$_SESSION["ACCESO"]["ADMIN"] = isset($_SESSION['rank'], $_SESSION['rank']) == "admin";
+$_SESSION["ACCESO"]["ADMIN"] = isset($_SESSION['myrank'], $_SESSION['myrank']) == "admin";
