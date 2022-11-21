@@ -21,8 +21,8 @@ if (!empty($_SESSION['user'])) {
      <div id="general_header"></div>
      <section class="secequipos">
           <?php
+          include('config.php');
           if (!empty($_SESSION['user'])){
-               $conn_bd = mysqli_connect('localhost', 'server', '12345', 'humanrightsaresecondary', 3306);
                $sql_query = "
                SELECT *
                FROM usuarios u join equipos e
@@ -46,8 +46,8 @@ if (!empty($_SESSION['user'])) {
      </section>
           <section class="secequipos">
                <?php
-               $conn_bd = mysqli_connect('localhost', 'server', '12345', 'humanrightsaresecondary', 3306);
-               $sql_query = "SELECT * FROM equipos ORDER BY grupo ASC;";
+               include('config.php');
+                $sql_query = "SELECT * FROM equipos ORDER BY grupo ASC;";
                if ($conn_bd) {
                     $result = mysqli_query($conn_bd, $sql_query);
 
