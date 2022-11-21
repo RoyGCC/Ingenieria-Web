@@ -34,9 +34,31 @@ if(!$_GET['equipoSeleccionado']){
             $sql_query = "SELECT * FROM equipos WHERE id = '" . $_GET['equipoSeleccionado'] . "';";
             $result = mysqli_query($conn_bd, $sql_query);
             $row = $result->fetch_assoc();
-            echo $row['equipo'];
+            echo "
+            
+            <h1>". $row['equipo'] ."</h1>
+            <img class='equipoimg' src='./resources/img/Banderas/". $row['dir_bandera'] . "'>
+            <span>
+                <h3>Puntos</h3>
+                <span>" . $row['puntos'] . "</span>
+            </span>
+            <span>
+                <h3>Partidos Jugados</h3>
+                <span>" . $row['j_jugados'] . "</span>
+            </span>
+            <span>
+                <h3>Partidos Ganados</h3>
+                <span>" . $row['j_ganados'] . "</span>
+            </span>
+            <span>
+                <h3>Partidos Empatados</h3>
+                <span>" . $row['j_empatados'] . "</span>
+            </span>
+            <span>
+                <h3>Partidos Perdidos</h3>
+                <span>" . $row['j_perdidos'] . "</span>
+            </span>"
             ?>
-
         </section>
 
     </form>
