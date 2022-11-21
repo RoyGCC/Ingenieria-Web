@@ -20,7 +20,7 @@
                     <a>
                          <h1 style="font-family: var(--fuente_titulos); color: #7f1947;">Estadios</h1>
                     </a>
-                    <span>Nuestros ocho espectaculares estadios de la Copa Mundial de la FIFA Qatar 2022™ están listos para recibir al mundo.</span>
+                    <span>Nuestros affd ocho espectaculares estadios de la Copa Mundial de la FIFA Qatar 2022™ están listos para recibir al mundo.</span>
                </div>
           </div>
           <div class="contenidoextra">
