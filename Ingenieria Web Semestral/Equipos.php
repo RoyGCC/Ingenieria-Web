@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+echo $_SESSION['user'];
+echo $_SESSION['myrank'];
+
+?>
 <html>
 <head>
      <meta charset='utf-8'>
@@ -11,29 +18,34 @@
 <body class="general_backgroundImage">
      <div id="general_header"></div>
      <section class="secequipos">
-          
-               <?php
-                    $conn_bd = mysqli_connect('localhost', 'server', '12345', 'humanrightsaresecondary', 3306);
-                    $sql_query = "SELECT * FROM equipos ORDER BY grupo ASC;";
-                    if ($conn_bd) {
-                         $result = mysqli_query($conn_bd,$sql_query);
+          <?php
+          $conn_bd = mysqli_connect('localhost', 'server', '12345', 'humanrightsaresecondary', 3306);
+          $sql_query = "SELECT * FROM equipos ORDER BY grupo ASC;";
+          if ($conn_bd) {
+               $result = mysqli_query($conn_bd, $sql_query);
 
-                         while ($equipos = mysqli_fetch_assoc($result)){
-                           echo "<div class='equipo'>
+               while ($equipos = mysqli_fetch_assoc($result)) {
+                    echo "<div class='equipo'>
 
                                    <a class='equipocontainer' href=''>
-                                   <span>". $equipos['grupo'] ."</span>
-                                   <img class='equipoimg' src='./resources/img/Banderas/". $equipos['dir_bandera'] . "'>
-                                   <span>". $equipos['equipo'] ."</span>
+                                   <span>" . $equipos['grupo'] . "</span>
+                                   <img class='equipoimg' src='./resources/img/Banderas/" . $equipos['dir_bandera'] . "'>
+                                   <span>" . $equipos['equipo'] . "</span>
                                    </a>
-                                   </div>";   
-                         }
-                         $conn_bd->close();
-                    }
-               ?>
+                                   </div>";
+               }
+               $conn_bd->close();
+          }
+          ?>
      </section>
      <script>
-          headerTemplate()
+          <?php
+          if (!empty($_SESSION['user'])) {
+               echo "headerTemplateLogged()";
+          } else {
+               echo "headerTemplateNotLogged()";
+          } ?>
      </script>
 </body>
+
 </html>

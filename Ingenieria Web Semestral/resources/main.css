@@ -15,9 +15,6 @@
 }
 
 
-#general_header{
-  
-}
 #general_header:out-of-range{
   position: fixed;
 }

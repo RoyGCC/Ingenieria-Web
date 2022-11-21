@@ -6,7 +6,6 @@ echo $_SESSION['myrank'];
 
 ?>
 <html>
-
 <head>
      <meta charset='utf-8'>
      <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -15,9 +14,7 @@ echo $_SESSION['myrank'];
      <link rel="stylesheet" href="resources/main.css">
      <link rel="icon" href="resources/img/Logo.png">
      <script src="./resources/js/templates.js"></script>
-
 </head>
-
 <body class="general_backgroundImage">
      <div id="general_header"></div>
      <section class="sechome" id="equipos_placeholder">
@@ -58,17 +55,18 @@ echo $_SESSION['myrank'];
                     <span>La cultura Catarí no permite los siguientes comportamientos.<br> Recuerda que los derechos humanos son opcionales aquí</span>
                </div>
           </div>
-          <div class="contenidoextra">
-               <a href="logout.php">logout</a>
-          </div>     
      </section>
 
 
      <script>
-          headerTemplate()
-          
+          <?php
+               if (!empty($_SESSION['user'])) {
+                    echo "headerTemplateLogged()";
+               } else {
+                    echo "headerTemplateNotLogged()";
+               }?>
      </script>
-     
+
 </body>
 
 </html>
