@@ -3,7 +3,10 @@ session_start();
 
 include "acceso.php";
 acceso('ADMIN');
-
+     if($_SESSION['myrank'] != "admin"){
+          echo '<script>alert("Welcome to Geeks for Geeks")</script>';
+          header("Location: loginsemestral.php");
+     }
 ?>
 
 <html>
