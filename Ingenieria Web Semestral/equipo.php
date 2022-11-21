@@ -1,12 +1,4 @@
-<?php
-session_start();
-if (!empty($_SESSION['user'])) {
-     echo $_SESSION['user'];
-     echo $_SESSION['myrank'];
-}
-?>
 <html>
-
 <head>
      <meta charset='utf-8'>
      <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -15,21 +7,12 @@ if (!empty($_SESSION['user'])) {
      <link rel="stylesheet" href="resources/main.css">
      <link rel="icon" href="resources/img/Logo.png">
      <script src="./resources/js/templates.js"></script>
-
-     <script lang="javascript" type="text/javascript">
-
-        function seleccionarEquipo(equipo) {
-            location.href = "equipo.php?equipoSeleccionado=" + equipo;
-        }
-
-    </script>
+</script>
 
 </head>
-
 <body class="general_backgroundImage">
      <div id="general_header"></div>
      
-          
      <form action="Equipos.php" method="post">
 
      <section class="secequipos">
@@ -40,19 +23,13 @@ if (!empty($_SESSION['user'])) {
                $con = mysqli_connect('localhost','root','') or die(mysqli_error());  
                mysqli_select_db($con,'humanrightsaresecondary') or die("cannot select DB");
                
-               $sql = "SELECT * FROM equipos";
+               $sql = "SELECT * FROM equipos WHERE id = $_GET[equipoSeleccionado]";
 
                $result = $con->query($sql);
 
-               while($row = $result->fetch_assoc()){ 
-                    echo '<div class="equipo">';
-                    echo '<a href="javascript:seleccionarEquipo('.$row['id'].');" class="equipocontainer">';
-                    echo '<span>'.$row['grupo'].'</span>';
-                    echo '<img class="equipoimg" src="./resources/img/Banderas/'.$row['dir_bandera'].'">';
-                    echo '<h4>'.$row['equipo'].'</h4>';
-                    echo '</a>';
-                    echo '</div>';
-               }
+               $row = $result->fetch_assoc();
+
+               echo $row['equipo'];
 
           ?>
 
@@ -60,8 +37,7 @@ if (!empty($_SESSION['user'])) {
 
      </form>
 
-
-          <script>
+     <script>
                <?php
                if (!empty($_SESSION['user'])) {
                     echo "headerTemplateLogged()";
@@ -70,5 +46,4 @@ if (!empty($_SESSION['user'])) {
                } ?>
           </script>
 </body>
-
 </html>
