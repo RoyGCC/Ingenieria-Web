@@ -71,7 +71,8 @@ if (!empty($_SESSION['user'])) {
                     echo "headerTemplateLogged()";
                } else {
                     echo "headerTemplateNotLogged()";
-               } ?>
+               } 
+               ?>
           </script>
 </body>
 

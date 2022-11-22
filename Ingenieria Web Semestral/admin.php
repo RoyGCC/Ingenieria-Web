@@ -25,7 +25,7 @@ acceso('ADMIN');
      <div id="general_header"></div>
 
      <section>
-
+        <h1>ADMIN</h1>
 
      </section>
      <script>

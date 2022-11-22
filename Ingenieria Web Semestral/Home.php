@@ -1,5 +1,7 @@
 <?php
+
 session_start();
+include "acceso.php";
 if (!empty($_SESSION['user'])) {
      echo $_SESSION['user'];
      echo $_SESSION['myrank'];
@@ -60,11 +62,9 @@ if (!empty($_SESSION['user'])) {
 
      <script>
           <?php
-               if (!empty($_SESSION['user'])) {
-                    echo "headerTemplateLogged()";
-               } else {
-                    echo "headerTemplateNotLogged()";
-               }?>
+          include 'phpscripts.php';
+          chooseheader();
+          ?>  
      </script>
 
 </body>
