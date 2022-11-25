@@ -3,7 +3,10 @@ session_start();
 
 include "acceso.php";
 acceso('ADMIN');
-
+     if($_SESSION['myrank'] != "admin"){
+          echo '<script>alert("Welcome to Geeks for Geeks")</script>';
+          header("Location: loginsemestral.php");
+     }
 ?>
 
 <html>
@@ -26,7 +29,12 @@ acceso('ADMIN');
 
      </section>
      <script>
-          headerTemplate()
+          <?php
+        if (!empty($_SESSION['user'])) {
+            echo "headerTemplateLogged()";
+        } else {
+            echo "headerTemplateNotLogged()";
+        } ?>
      </script>
 </body>
 
