@@ -29,64 +29,38 @@ if (!empty($_SESSION['user'])) {
 <body class="general_backgroundImage">
      <div id="general_header"></div>
      
-          
-     <form action="Equipos.php" method="post">
+
 
      <section class="secequipos">
 
+     
 
           <?php
           include('config.php');
-          if (!empty($_SESSION['user'])){
-               $sql_query = "
-               SELECT *
-               FROM usuarios u join equipos e
-               ON e.id = u.id_equipo_fav
-               WHERE u.id =". $_SESSION['user'] ."
-               ;";  
-               if ($conn_bd) {
-                    $favorite_result = mysqli_query($conn_bd, $sql_query);
-                    while ($equipos = mysqli_fetch_assoc($favorite_result)) {
-                         echo "
-                         <div class='equipo'>
-                              <a class='equipocontainer' href='equipo.php?equipoSeleccionado=". $equipos['id'] ."'>
-                              <span>" . $equipos['grupo'] . "</span>
-                              <img class='equipoimg' src='./resources/img/Banderas/" . $equipos['dir_bandera'] . "'>
-                              <span>" . $equipos['equipo'] . "</span>
-                              </a>
-                              </div>";
-                    }  
+               $sql_query = "SELECT * FROM equipos ORDER BY grupo ASC;";
+          if ($conn_bd) {
+               $result = mysqli_query($conn_bd, $sql_query);
+                    while($equipos = mysqli_fetch_assoc($result)){
+                         echo "<a class='equipocontainer' href='equipo.php?equipoSeleccionado=" . $equipos['id'] . "'>";
+                         echo "<span>" . $equipos['grupo'] . "</span>";
+                         echo "<img class='equipoimg' src='./resources/img/Banderas/" . $equipos['dir_bandera'] . "'>";
+                         echo "<span>" . $equipos['equipo'] . "</span>";
+                         echo "</a>";
+                         echo "</div>";
+                    }               
                }
-
+               $conn_bd->close();
           ?>
 
      </section>
-          <section class="secequipos">
-               <?php
-               include('config.php');
-                $sql_query = "SELECT * FROM equipos ORDER BY grupo ASC;";
-               if ($conn_bd) {
-                    $result = mysqli_query($conn_bd, $sql_query);
-                                   <a class='equipocontainer' href='equipo.php?equipoSeleccionado=" . $equipos['id'] . "'>
-                                   <span>" . $equipos['grupo'] . "</span>
-                                   <img class='equipoimg' src='./resources/img/Banderas/" . $equipos['dir_bandera'] . "'>
-                                   <span>" . $equipos['equipo'] . "</span>
-                                   </a>
-                                   </div>";
-                    }
-                    $conn_bd->close();
-               }
-               ?>
-          </section>
+
           <script>
                <?php
-               if (!empty($_SESSION['user'])) {
-                    echo "headerTemplateLogged()";
-               } else {
-                    echo "headerTemplateNotLogged()";
-               } 
+               include 'phpscripts.php';
+               chooseheader();
                ?>
           </script>
+
 </body>
 
 </html>

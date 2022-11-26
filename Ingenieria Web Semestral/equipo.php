@@ -25,8 +25,6 @@ if(!$_GET['equipoSeleccionado']){
 <body class="general_backgroundImage">
     <div id="general_header"></div>
 
-    <form action="Equipos.php" method="post">
-
         <section class="secequipos">
 
             <?php
@@ -61,17 +59,25 @@ if(!$_GET['equipoSeleccionado']){
             ?>
         </section>
 
-        <section class="secequipos">
+        <section class="secjugadores">
                <?php
                include('config.php');
                 $sql_query = "SELECT * FROM jugadores_equipo WHERE id_equipo = '" . $_GET['equipoSeleccionado'] . "';";
                if ($conn_bd) {
                     $result = mysqli_query($conn_bd, $sql_query);
 
-                    while ($equipos = mysqli_fetch_assoc($result)) {
-                         echo "<div class='equipo'>
+                    $equipos = mysqli_fetch_assoc($result);
 
-                                   <img class='equipoimg' src='./resources/img/EQUIPOS/" . $equipos['marco_dir'] . "'>
+                    echo "<div class='jugador big-shield'>
+
+                                   <img class='jugadorimg' src='./resources/img/EQUIPOS/" . $equipos['marco_dir'] . "'>
+                            
+                                   </div>";
+
+                    while ($equipos = mysqli_fetch_assoc($result)) {
+                         echo "<div class='jugador'>
+
+                                   <img class='jugadorimg' src='./resources/img/EQUIPOS/" . $equipos['marco_dir'] . "'>
                             
                                    </div>";
                     }
@@ -80,17 +86,11 @@ if(!$_GET['equipoSeleccionado']){
                ?>
           </section>
 
-        
-
-    </form>
-
     <script>
         <?php
-        if (!empty($_SESSION['user'])) {
-            echo "headerTemplateLogged()";
-        } else {
-            echo "headerTemplateNotLogged()";
-        } ?>
+        include 'phpscripts.php';
+        chooseheader();
+        ?>
     </script>
 </body>
 

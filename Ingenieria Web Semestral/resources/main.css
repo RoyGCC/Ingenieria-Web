@@ -30,12 +30,12 @@
   margin-top: 30px;
   padding-inline: 10%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .equipo {
-  margin: 25px 15px;
+  margin: 1rem;
   font-family: var(--fuente_titulos);
 }
 
@@ -53,6 +53,7 @@
   align-items: center;
   border-radius: 5%/10%;
   border: 0px;
+  margin: 1rem;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
@@ -60,6 +61,27 @@
 
 .equipocontainer:hover {
   transform: scale(110%);
+}
+
+.secjugadores {
+  margin-top: 30px;
+  padding-inline: 10%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.jugador {
+  margin: 1rem;
+  font-family: var(--fuente_titulos);
+}
+
+.jugadorimg {
+  width: 10rem;
+}
+
+.big-shield>img {
+  width: 20rem;
 }
 
 
@@ -129,6 +151,10 @@
 
 }
 
+.inline-container {
+  container-type: inline-size;
+}
+
 .navbar-home {
   background-color: #ac224e;
   top: 0;
@@ -147,6 +173,7 @@
 .navbar-home ul li a {
   text-decoration: none;
   font-family: var(--fuente_titulos);
+  font-size: max(1.25cqi, 0.75rem);
   color: #fff;
   font-weight: bold;
 }
@@ -164,7 +191,7 @@
 }
 
 .header-home h1 {
-  font-size: 10px;
+  font-size: max(1cqi, 0.5rem);
   font-family: var(fuente_titulos);
   font-weight: bold;
   color: #ac224e;

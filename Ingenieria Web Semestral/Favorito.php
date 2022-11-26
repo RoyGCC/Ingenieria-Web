@@ -1,14 +1,10 @@
 <?php
 session_start();
-
-include "acceso.php";
-acceso('ADMIN');
-     if($_SESSION['myrank'] != "admin"){
-          echo '<script>alert("Welcome to Geeks for Geeks")</script>';
-          header("Location: loginsemestral.php");
-     }
+if (!empty($_SESSION['user'])) {
+     echo $_SESSION['user'];
+     echo $_SESSION['myrank'];
+}
 ?>
-
 <html>
 
 <head>
@@ -19,23 +15,58 @@ acceso('ADMIN');
      <link rel="stylesheet" href="resources/main.css">
      <link rel="icon" href="resources/img/Logo.png">
      <script src="./resources/js/templates.js"></script>
+
+     <script lang="javascript" type="text/javascript">
+
+        function seleccionarEquipo(equipo) {
+            location.href = "equipo.php?equipoSeleccionado=" + equipo;
+        }
+
+    </script>
+
 </head>
 
 <body class="general_backgroundImage">
      <div id="general_header"></div>
+     
 
-     <section>
 
+     <section class="secequipos">
+
+
+          <?php
+          include('config.php');
+               $sql_query = "
+               SELECT *
+               FROM usuarios u join equipos e
+               ON e.id = u.id_equipo_fav
+               WHERE u.id =". $_SESSION['user'] ."
+               ;";  
+               if ($conn_bd) {
+                    $favorite_result = mysqli_query($conn_bd, $sql_query);
+                    while ($equipos = mysqli_fetch_assoc($favorite_result)) {
+                         echo "
+                         <div class='equipo'>
+                              <a class='equipocontainer' href='equipo.php?equipoSeleccionado=". $equipos['id'] ."'>
+                              <span>" . $equipos['grupo'] . "</span>
+                              <img class='equipoimg' src='./resources/img/Banderas/" . $equipos['dir_bandera'] . "'>
+                              <span>" . $equipos['equipo'] . "</span>
+                              </a>
+                              </div>";
+                    }  
+               }
+
+          ?>
 
      </section>
-     <script>
-          <?php
-        if (!empty($_SESSION['user'])) {
-            echo "headerTemplateLogged()";
-        } else {
-            echo "headerTemplateNotLogged()";
-        } ?>
-     </script>
+
+          <script>
+               <?php
+               include 'phpscripts.php';
+               chooseheader(); 
+               ?>
+          </script>
+
 </body>
 
 </html>
