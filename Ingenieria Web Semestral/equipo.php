@@ -61,7 +61,9 @@ if(!$_GET['equipoSeleccionado']){
 
             <?php
             include('config.php');
-                $sql_query = "SELECT * FROM jugadores_equipo WHERE id_equipo = '" . $_GET['equipoSeleccionado'] . "';";
+                $sql_query = "SELECT * FROM jugadores_equipo a
+                JOIN equipos b ON a.id_equipo = b.id
+                WHERE id_equipo = '" . $_GET['equipoSeleccionado'] . "';";
 
                 if ($conn_bd) {
                         $result = mysqli_query($conn_bd, $sql_query);
@@ -70,14 +72,14 @@ if(!$_GET['equipoSeleccionado']){
 
                         echo "<div class='jugador big-shield'>
 
-                                    <img class='jugadorimg' src='./resources/img/EQUIPOS/" . $equipos['marco_dir'] . "'>
+                                    <img class='jugadorimg' src='./resources/img/EQUIPOS/". $equipos['equipo'] ."/" . $equipos['equipo'] . ".gif'>
                                 
                                     </div>";
 
                         while ($equipos = mysqli_fetch_assoc($result)) {
                             echo "<div class='jugador'>
 
-                                    <img class='jugadorimg' src='./resources/img/EQUIPOS/" . $equipos['marco_dir'] . "'>
+                                    <img class='jugadorimg' src='./resources/img/EQUIPOS/". $equipos['equipo'] ."/" . $equipos['marco_dir'] . "'>
                                 
                                     </div>";
                         }
