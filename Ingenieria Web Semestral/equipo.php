@@ -25,9 +25,9 @@ if(!$_GET['equipoSeleccionado']){
 <body class="general_backgroundImage">
     <div id="general_header"></div>
 
-    <form action="Equipos.php" method="post">
+    <section class="equipo-selec inline-container">
 
-        <section class="secequipos">
+        <section class="secequipos-selec inline-container">
 
             <?php
             include('config.php');
@@ -35,60 +35,69 @@ if(!$_GET['equipoSeleccionado']){
             $result = mysqli_query($conn_bd, $sql_query);
             $row = $result->fetch_assoc();
             echo "
-            
+
             <h1>". $row['equipo'] ."</h1>
-            <img class='equipoimg' src='./resources/img/Banderas/". $row['dir_bandera'] . "'>
-            <span>
-                <h3>Puntos</h3>
-                <span>" . $row['puntos'] . "</span>
-            </span>
-            <span>
-                <h3>Partidos Jugados</h3>
-                <span>" . $row['j_jugados'] . "</span>
-            </span>
-            <span>
-                <h3>Partidos Ganados</h3>
-                <span>" . $row['j_ganados'] . "</span>
-            </span>
-            <span>
-                <h3>Partidos Empatados</h3>
-                <span>" . $row['j_empatados'] . "</span>
-            </span>
-            <span>
-                <h3>Partidos Perdidos</h3>
-                <span>" . $row['j_perdidos'] . "</span>
-            </span>"
+            <img src='./resources/img/Banderas/". $row['dir_bandera'] . "'>";
+
+            echo '<br><h2>Logros previos:</h2>';
+
+            $xmldata = simplexml_load_file("./resources/xml/equipos.xml") or die("Faileddd to load");
+
+            foreach($xmldata as $equipo) {
+                if($row['id'] == $equipo->id){
+                    echo '<h1 class="logros">'.$equipo->logros.'</h1>';
+                }
+               
+            }
             ?>
+
         </section>
 
-        <section class="secequipos">
-               <?php
-               include('config.php');
+        <section class="jugadores-selec inline-container">
+
+            <h1>Jugadores</h1>
+
+            <section class="secjugadores-selec inline-container">
+
+            <?php
+            include('config.php');
                 $sql_query = "SELECT * FROM jugadores_equipo WHERE id_equipo = '" . $_GET['equipoSeleccionado'] . "';";
-               if ($conn_bd) {
-                    $result = mysqli_query($conn_bd, $sql_query);
 
-                    while ($equipos = mysqli_fetch_assoc($result)) {
-                         echo "<div class='equipo'>
+                if ($conn_bd) {
+                        $result = mysqli_query($conn_bd, $sql_query);
 
-                                   <img class='equipoimg' src='./resources/img/EQUIPOS/" . $equipos['marco_dir'] . "'>
-                            
-                                   </div>";
-                    }
-                    $conn_bd->close();
-               }
-               ?>
-          </section>
+                        $equipos = mysqli_fetch_assoc($result);
+
+                        echo "<div class='jugador big-shield'>
+
+                                    <img class='jugadorimg' src='./resources/img/EQUIPOS/" . $equipos['marco_dir'] . "'>
+                                
+                                    </div>";
+
+                        while ($equipos = mysqli_fetch_assoc($result)) {
+                            echo "<div class='jugador'>
+
+                                    <img class='jugadorimg' src='./resources/img/EQUIPOS/" . $equipos['marco_dir'] . "'>
+                                
+                                    </div>";
+                        }
+                        $conn_bd->close();
+                }
+
+            ?>
+
+            </section>
+
+        </section>
+        
+    </section>
 
         
-
-    </form>
-
     <script>
         <?php
-          include 'phpscripts.php';
-          chooseheader();
-          ?>
+        include 'phpscripts.php';
+        chooseheader();
+        ?>
     </script>
 </body>
 

@@ -1,0 +1,306 @@
+<equipos>
+
+    <equipo>
+
+        <id>1</id>
+        <logros>
+            &lt;li&gt;Copa Mundial x 5&lt;/li&gt;
+            &lt;li&gt;Copa América x 9&lt;/li&gt;
+            &lt;li&gt;Copa Confederaciones x 4&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>2</id>
+        <logros>
+            &lt;li&gt;Copa Mundial x 4&lt;/li&gt;
+            &lt;li&gt;Campeonato de Europa x 3&lt;/li&gt;
+            &lt;li&gt;Copa Confederaciones x 1&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>3</id>
+        <logros>
+            &lt;li&gt;No hay campeonatos previos.&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>4</id>
+        <logros>
+            &lt;li&gt;Copa Mundial x 2&lt;/li&gt;
+            &lt;li&gt;Copa América x 15&lt;/li&gt;
+            &lt;li&gt;Copa Confederaciones x 1&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>5</id>
+        <logros>
+            &lt;li&gt;No hay campeonatos previos.&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>6</id>
+        <logros>
+            &lt;li&gt;Juegos Olímpicos x 1&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>7</id>
+        <logros>
+            &lt;li&gt;Copa Africana de Naciones x 1&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>8</id>
+        <logros>
+            &lt;li&gt;Copa Oro x 2&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+
+        <id>9</id>
+        <logros>
+            &lt;li&gt;Copa Oro x 3&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>10</id>
+        <logros>
+            &lt;li&gt;No hay campeonatos previos.&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>11</id>
+        <logros>
+            &lt;li&gt;Campeonato de Europa x 1&lt;/li&gt;
+            &lt;li&gt;Copa Confederaciones x 1&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>12</id>
+        <logros>
+            &lt;li&gt;No hay campeonatos previos.&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>13</id>
+        <logros>
+            &lt;li&gt;Copa Mundial x 1&lt;/li&gt;
+            &lt;li&gt;Campeonato de Europa x 3&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>14</id>
+        <logros>
+            &lt;li&gt;Copa Oro x 7&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>15</id>
+        <logros>
+            &lt;li&gt;Juegos Olímpicos x 1&lt;/li&gt;
+            &lt;li&gt;Copa Mundial x 2&lt;/li&gt;
+            &lt;li&gt;Campeonato de Europa x 2&lt;/li&gt;
+            &lt;li&gt;Copa Confederaciones x 2&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>16</id>
+        <logros>
+            &lt;li&gt;No hay campeonatos previos.&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+
+        <id>17</id>
+        <logros>
+            &lt;li&gt;Copa Africana de Naciones x 4&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>18</id>
+        <logros>
+            &lt;li&gt;Campeonato de Europa x 1&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>19</id>
+        <logros>
+            &lt;li&gt;Copa Mundial x 1&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>20</id>
+        <logros>
+            &lt;li&gt;Copa Asiática x 3&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>21</id>
+        <logros>
+            &lt;li&gt;No hay campeonatos previos.&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>22</id>
+        <logros>
+            &lt;li&gt;Copa Asiática x 2&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>23</id>
+        <logros>
+            &lt;li&gt;Copa Africana de Naciones x 3&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>24</id>
+        <logros>
+            &lt;li&gt;Copa Confederaciones x 1&lt;/li&gt;
+            &lt;li&gt;Copa Oro x 11&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+
+        <id>25</id>
+        <logros>
+            &lt;li&gt;Juegos Olímpicos x 1&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>26</id>
+        <logros>
+            &lt;li&gt;Campeonato de Europa x 1&lt;/li&gt;
+            &lt;li&gt;UEFA Nations League x 1&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>27</id>
+        <logros>
+            &lt;li&gt;No hay campeonatos previos.&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>28</id>
+        <logros>
+            &lt;li&gt;No hay campeonatos previos.&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>29</id>
+        <logros>
+            &lt;li&gt;No hay campeonatos previos.&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>30</id>
+        <logros>
+            &lt;li&gt;No hay campeonatos previos.&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>31</id>
+        <logros>
+            &lt;li&gt;Copa Africana de Naciones x 2&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+    <equipo>
+    
+        <id>32</id>
+        <logros>
+            &lt;li&gt;Juegos Olímpicos x 2&lt;/li&gt;
+            &lt;li&gt;Copa Mundial x 2&lt;/li&gt;
+            &lt;li&gt;Copa América x 15&lt;/li&gt;
+        </logros>
+
+    </equipo>
+
+</equipos>
