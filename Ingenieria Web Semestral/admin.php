@@ -7,6 +7,39 @@ acceso('ADMIN');
           echo '<script>alert("Welcome to Geeks for Geeks")</script>';
           header("Location: loginsemestral.php");
      }
+
+     $error = "";
+
+     if($_SERVER['REQUEST_METHOD']== "POST")
+     {
+       if(!$DB = new PDO("mysql:host=localhost;dbname=humanrightsaresecondary","root",""))
+       {
+         die("error");
+       }
+       
+       $arr['j_jugados'] = ['j_ganados'] + ['j_empatados'] + ['j_perdidos'];
+       $arr['j_ganados'] = $_POST['j_ganados'];
+       $arr['j_empatados'] = $_POST['j_empatados'];
+       $arr['j_perdidos'] = $_POST['j_perdidos'];
+      
+   
+       $query = "insert into equipos  WHERE id_equipo = '" . $_GET['equipoSeleccionado'] . "'(j_jugados, j_ganados, j_empatados, j_perdidos) values (:j_jugados, :j_ganados, :j_empatados, :j_perdidos)";
+       $stm = $DB->prepare($query);
+       if($stm)
+       {
+         $check = $stm->execute($arr);
+         if(!$check)
+         {
+           $error = "error";
+         }
+         if($error == "")
+         {
+           header("Location: admin.php");
+           die;
+         }
+       }
+   
+     }
 ?>
 
 <html>
@@ -26,6 +59,34 @@ acceso('ADMIN');
 
      <section>
         <h1>ADMIN</h1>
+          <body class="bodyRegister general_backgroundImage">
+               <div class="register-box">
+               <img src="resources/img/Logo.png" class="avatar" alt="Avatar Image">
+               <h1>Ingresar estadisticas de equipo</h1>
+               <form method="post">
+                    <!-- Equipo SELECT --> 
+                    <label for="Firstname">Equipo</label>
+                    <select name="select">
+                         <option value="Qatar">Qatar</option>
+                         <option value="Ecuador">Ecuador</option>
+                         <option value="Senegal">Senegal</option>
+                    </select>
+                    <!-- Partidos Jugados INPUT -->
+                    <label for="j_ganados">Partidos Ganados</label>
+                    <input type="text" placeholder="Partidos Ganados" name="j_ganados" id="j_ganados">
+                    <!-- Partidos Jugados INPUT -->
+                    <label for="j_empatados">Partidos Empatados</label>
+                    <input type="text" placeholder="Partidos Empatados" name="j_empatados" id="j_empatados">
+                    <!-- Partidos Jugados INPUT -->
+                    <label for="j_perdidos">Partidos Perdidos</label>
+                    <input type="text" placeholder="Partidos Perdidos" name="j_perdidos" id="j_perdidos">
+                    <!-- Enviar -->
+                    <input type="submit" value="Ingresar">
+               </form>
+               </div>
+          </body>        
+
+
 
      </section>
      <script>

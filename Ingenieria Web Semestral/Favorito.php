@@ -66,7 +66,6 @@ if (!empty($_SESSION['user'])) {
                chooseheader(); 
                ?>
           </script>
-
 </body>
 
 </html>
