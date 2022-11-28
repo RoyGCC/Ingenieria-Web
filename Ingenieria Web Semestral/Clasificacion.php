@@ -1,4 +1,5 @@
 <?php
+include('phpscripts.php');
 session_start();
 if (!empty($_SESSION['user'])) {
      echo $_SESSION['user'];
@@ -6,7 +7,6 @@ if (!empty($_SESSION['user'])) {
 }
 ?>
 <html>
-
 <head>
      <meta charset='utf-8'>
      <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -16,60 +16,34 @@ if (!empty($_SESSION['user'])) {
      <link rel="icon" href="resources/img/Logo.png">
      <script src="./resources/js/templates.js"></script>
 </head>
-
 <body class="general_backgroundImage">
      <div id="general_header"></div>
-
-     <section>
-     <main>
-          <ul class="a">
-          <li>&nbsp;</li>
-
-          <li class="game game-top winner">Lousville <span>79</span></li>
-          <li>&nbsp;</li>
-          <li class="game game-bottom ">NC A&T <span>48</span></li>
-
-          <li>&nbsp;</li>
-
-          <li class="game game-top winner">Colo St <span>84</span></li>
-          <li>&nbsp;</li>
-          <li class="game game-bottom ">Missouri <span>72</span></li>
-
-          <li>&nbsp;</li>
-
-          <!-- REDACTED SOME GAMES --->
-
-          <li class="game game-top winner">Duke <span>73</span></li>
-          <li>&nbsp;</li>
-          <li class="game game-bottom ">Albany <span>61</span></li>
-
-          <li>&nbsp;</li>
-          </ul>
-          <ul class="a">
-          <!-- redacted, same structure as round 1 -->
-          </ul>
-          <ul class="a">
-          <!-- redacted -->
-          </ul>
-          <ul class="a">
-          <li>&nbsp;</li>
-
-          <li class="game game-top winner">Lousville <span>85</span></li>
-          <li>&nbsp;</li>
-          <li class="game game-bottom ">Duke <span>63</span></li>
-
-          <li>&nbsp;</li>
-          </ul>
-     </main>
-     
-
+     <section class="sec_partido">
+          <h1>PARTIDOS POR JUGAR O EN JUEGO</h1>
+          <?php
+          $sql_all_matches = "SELECT * 
+                                   FROM partidos p LEFT JOIN equipos e 
+                                   ON  p.id_equipo1 = e.id && p.id_equipo2 = e.id && p.id_equipo_ganador = e.id
+                                    WHERE p.estado != 'Finalizado'
+                                   ORDER BY p.horario_juego ASC;";
+          display_matches($sql_all_matches);
+          ?>
+     </section>
+     <section class="sec_partido">
+          <h1>PARTIDOS Finalizados</h1>
+          <?php
+          $sql_query_played = "SELECT * 
+                              FROM partidos p LEFT JOIN equipos e 
+                              ON  p.id_equipo1 = e.id && p.id_equipo2 = e.id && p.id_equipo_ganador = e.id
+                              WHERE p.estado = 'Finalizado'
+                              ORDER BY p.horario_juego ASC;";
+          display_matches($sql_query_played);
+          ?>
      </section>
      <script>
           <?php
-          include 'phpscripts.php';
           chooseheader();
           ?>
      </script>
 </body>
-
 </html>
