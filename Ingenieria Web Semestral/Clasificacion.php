@@ -18,29 +18,6 @@ if (!empty($_SESSION['user'])) {
 </head>
 <body class="general_backgroundImage">
      <div id="general_header"></div>
-<<<<<<< Updated upstream
-     <section class="sec_partido">
-          <h1>PARTIDOS POR JUGAR O EN JUEGO</h1>
-          <?php
-          $sql_all_matches = "SELECT * 
-                                   FROM partidos p LEFT JOIN equipos e 
-                                   ON  p.id_equipo1 = e.id && p.id_equipo2 = e.id && p.id_equipo_ganador = e.id
-                                    WHERE p.estado != 'Finalizado'
-                                   ORDER BY p.horario_juego ASC;";
-          display_matches($sql_all_matches);
-          ?>
-     </section>
-     <section class="sec_partido">
-          <h1>PARTIDOS Finalizados</h1>
-          <?php
-          $sql_query_played = "SELECT * 
-                              FROM partidos p LEFT JOIN equipos e 
-                              ON  p.id_equipo1 = e.id && p.id_equipo2 = e.id && p.id_equipo_ganador = e.id
-                              WHERE p.estado = 'Finalizado'
-                              ORDER BY p.horario_juego ASC;";
-          display_matches($sql_query_played);
-          ?>
-=======
 
      <section class="classification-content inline-container">
 
@@ -302,7 +279,6 @@ if (!empty($_SESSION['user'])) {
 
           </section>
 
->>>>>>> Stashed changes
      </section>
 
      <script>

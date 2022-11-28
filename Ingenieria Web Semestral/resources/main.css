@@ -664,3 +664,93 @@
   margin: 0.7cqi;
   border-radius: 1cqi;
 }
+
+.classification-content *h2{
+  font-size: 3cqi;
+}
+
+.classification-content *h3{
+  font-size: 2.5cqi;
+}
+
+.classification-content *h4{
+  font-size: 2cqi;
+}
+
+.classification-content *h5{
+  font-size: 1.5cqi;
+}
+
+.bracket-container{
+  width: 100vw;
+}
+
+.bracket-container{
+  display: flex;
+   flex-direction: row;
+   margin-top: 20px;
+}
+
+
+.bracket, .bracket2{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.bracket > section, .bracket2 > section{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.bracket > section *{
+  justify-self: center;
+}
+
+.match{
+  height: 30cqi;
+  background-color: white;
+  margin: 5cqi;
+  border-radius: 8cqi;
+}
+
+.bracket .match:nth-child(even){
+  background-color: #ffd2d2;
+}
+
+.bracket2 .match:nth-child(odd){
+  background-color: #ffd2d2;
+}
+
+.titulos-partidos{
+  margin-top: 30px;
+  color: white;
+  text-align: center;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
+}
+
+.bronze{
+  text-align: center;
+  color: white;
+  width: calc(100%/4);
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 0;
+}
+
+.bronze-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.bronze .match{
+  width: 100%;
+  height: 3.8cqi;
+  margin: 0.7cqi;
+  border-radius: 1cqi;
+}
