@@ -31,36 +31,36 @@ if (!empty($_SESSION['user'])) {
           if ($conn_bd) {
                $result = mysqli_query($conn_bd, $sql_query);
           while ($equipos = mysqli_fetch_assoc($result)) {
-          echo "
+          echo "<div class='equipo'>
 
           <h1>". $equipos['equipo'] ."</h1>
-          <img class='equipoimg' src='./resources/img/Banderas/". $equipos['dir_bandera'] . "'>
+          <img style='width: 50px; height: 25px;' src='./resources/img/Banderas/". $equipos['dir_bandera'] . "'>
 
           <span>
-          <h3>Puntos</h3>
+          <h3>Pts</h3>
           <span>" . $equipos['puntos'] . "</span>
           </span>
 
           <span>
-          <h3>Partidos Jugados</h3>
+          <h3>PJ</h3>
           <span>" . $equipos['j_jugados'] . "</span>
           </span>
 
           <span>
-          <h3>Partidos Ganados</h3>
+          <h3>G</h3>
           <span>" . $equipos['j_ganados'] . "</span>
           </span>
 
           <span>
-          <h3>Partidos Empatados</h3>
+          <h3>E</h3>
           <span>" . $equipos['j_empatados'] . "</span>
           </span>
 
           <span>
-          <h3>Partidos Perdidos</h3>
+          <h3>P</h3>
           <span>" . $equipos['j_perdidos'] . "</span>
-          </span><br><br><br>
-          
+          </span>
+          </div>
           "
           ;
 
