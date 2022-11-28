@@ -86,11 +86,9 @@ if(!$_GET['equipoSeleccionado']){
 
     <script>
         <?php
-        if (!empty($_SESSION['user'])) {
-            echo "headerTemplateLogged()";
-        } else {
-            echo "headerTemplateNotLogged()";
-        } ?>
+          include 'phpscripts.php';
+          chooseheader();
+          ?>
     </script>
 </body>
 

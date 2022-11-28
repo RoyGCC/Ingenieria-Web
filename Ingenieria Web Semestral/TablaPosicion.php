@@ -20,19 +20,61 @@ if (!empty($_SESSION['user'])) {
 <body class="general_backgroundImage">
      <div id="general_header"></div>
 
-     <section>
+     <section class="secequipos">
 
+          <?php
+          include('config.php');
+          $sql_query = "SELECT * FROM equipos ORDER BY grupo ASC;";
+          $result = mysqli_query($conn_bd, $sql_query);
+          $row = $result->fetch_assoc();
+          
+          if ($conn_bd) {
+               $result = mysqli_query($conn_bd, $sql_query);
+          while ($equipos = mysqli_fetch_assoc($result)) {
+          echo "
 
+          <h1>". $equipos['equipo'] ."</h1>
+          <img class='equipoimg' src='./resources/img/Banderas/". $equipos['dir_bandera'] . "'>
 
+          <span>
+          <h3>Puntos</h3>
+          <span>" . $equipos['puntos'] . "</span>
+          </span>
 
+          <span>
+          <h3>Partidos Jugados</h3>
+          <span>" . $equipos['j_jugados'] . "</span>
+          </span>
+
+          <span>
+          <h3>Partidos Ganados</h3>
+          <span>" . $equipos['j_ganados'] . "</span>
+          </span>
+
+          <span>
+          <h3>Partidos Empatados</h3>
+          <span>" . $equipos['j_empatados'] . "</span>
+          </span>
+
+          <span>
+          <h3>Partidos Perdidos</h3>
+          <span>" . $equipos['j_perdidos'] . "</span>
+          </span><br><br><br>
+          
+          "
+          ;
+
+          }
+          $conn_bd->close();
+          }
+          ?>
      </section>
+
      <script>
           <?php
-          if (!empty($_SESSION['user'])) {
-               echo "headerTemplateLogged()";
-          } else {
-               echo "headerTemplateNotLogged()";
-          } ?>
+          include 'phpscripts.php';
+          chooseheader();
+          ?>
      </script>
 </body>
 

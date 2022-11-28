@@ -457,3 +457,46 @@ margin-bottom: 20px;
   
 }
 
+main,
+.a {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  list-style: none;
+  padding: 0;
+}
+
+.game + li {
+  flex-grow: 1;
+}
+
+li:first-child,
+li:last-child {
+  flex-grow: 0.5;
+}
+
+.game {
+  padding-left: 20px;
+}
+
+.winner {
+  font-weight: bold;
+}
+
+.game span {
+  float: right;
+  margin-right: 5px;
+}
+
+.game-top {
+  border-bottom: 1px solid #aaa;
+}
+
+.game-top + li {
+  border-right: 1px solid #aaa;
+  min-height: 40px;
+}
+
+.game-bottom {
+  border-top: 1px solid #aaa;
+}
