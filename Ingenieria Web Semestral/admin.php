@@ -15,15 +15,19 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
           $_POST['j_perdidos'] = 'j_perdidos';}
      if($conn_BD){
      /*$Total_Games = $_POST['j_ganados'] + $_POST['j_empatados'] + $_POST['j_perdidos'];*/
+     
+
      $query = "UPDATE equipos 
-               SET  j_ganados = ". $_POST['j_ganados'].", j_empatados = ". $_POST['j_empatados'].", j_perdidos = ". $_POST['j_perdidos']." 
+               SET  j_ganados = ". $_POST['j_ganados'].", j_empatados = ". $_POST['j_empatados'].", j_perdidos = ". $_POST['j_perdidos']."
                WHERE id = " . $_POST['equipoSelect'].";";
+
      mysqli_query($conn_BD,$query);
      $query_jjugados = "UPDATE equipos 
-                        SET j_jugados = j_ganados+j_perdidos+j_empatados
+                        SET j_jugados = j_ganados+j_perdidos+j_empatados, puntos = (j_ganados*3)+j_empatados 
                         WHERE id =".$_POST['equipoSelect'].";";
      mysqli_query($conn_BD,$query_jjugados);
-     header("Location:Home.php");}
+     header("Location:Home.php");
+     }
 }
 ?>
 <html>
@@ -46,9 +50,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                <form method="post">
                     <label for="equipoSelect">Equipo</label>
                     <select name="equipoSelect">
-                         <option value="27">Qatar</option>
-                         <option value="12">Ecuador</option>
-                         <option value="28">Senegal</option>
+                         <?php
+                         $team = quick_team('*');
+                         while($opt_team = mysqli_fetch_assoc($team)) {
+                              echo "<option value='". $opt_team['id']."'>". $opt_team['grupo'] .") ".$opt_team['equipo']."</option>"  ;
+                         }
+                         ?>
                     </select>
                     <label for="j_ganados">Partidos Ganados</label>
                     <input type="number" placeholder="Partidos Ganados" name="j_ganados" id="j_ganados">
