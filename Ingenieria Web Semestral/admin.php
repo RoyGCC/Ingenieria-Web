@@ -5,7 +5,6 @@ include "config.php";
 if($_SESSION['myrank'] != "admin"){
      header("Location: loginsemestral.php");
 }
-
 if($_SERVER['REQUEST_METHOD'] == "POST"){
      if($_POST['j_ganados'] == null){
           $_POST['j_ganados'] = 'j_ganados';}
@@ -67,7 +66,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                </form>
                </div>
           </body>        
-
      </section>
      <script>
           <?php
@@ -75,5 +73,4 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
           ?>
      </script>
 </body>
-
 </html>

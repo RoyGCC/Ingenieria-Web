@@ -6,7 +6,6 @@ if ($_SESSION['myrank'] != "admin") {
     header("Location: loginsemestral.php");
 }
 ?>
-
 <html>
 <head>
      <meta charset='utf-8'>
