@@ -557,3 +557,61 @@
     
   }*/
 }
+
+
+
+
+/* Estilos de la página de Clasificación */
+
+.cont_partido{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-right: 50px;
+  padding-left: 50px;
+  margin: 5px;
+}
+
+.partido_equipos{
+  display: flex;
+  align-items: center;
+  background-image: url("img/Fondo4.png");
+  background-size:cover;
+  margin: 5px;
+  padding: 5px;
+}
+
+.sec_partido{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sec_partido h1{
+  padding: 10px;
+  margin: 10px;
+  color: white;
+}
+
+.marc_equipo{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.marc_equipo img{
+
+  margin: 10px;
+}
+
+.points_partido{
+  color: white;
+}
+
+.partido_detalles{
+  display: flex;
+  flex-direction: column;
+}
