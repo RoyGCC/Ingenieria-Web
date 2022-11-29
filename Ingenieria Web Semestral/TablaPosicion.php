@@ -19,8 +19,8 @@ if (!empty($_SESSION['user'])) {
 
 <body style="text-align: center;" class="general_backgroundImage">
      <div id="general_header"></div>
-     <h1 style="margin-top:50px;">Tabla de posición</h1>
-     <h1 style="margin-top:50px;">Grupo A</h1>
+     <h1 style="margin-top:50px;color: #fff;">Tabla de posición</h1>
+     <h1 style="margin-top:50px;color: #fff;">Grupo A</h1>
      <section style="margin-top:0px;" class="secequipos">
      
           <?php
@@ -64,7 +64,7 @@ if (!empty($_SESSION['user'])) {
           }
           ?>
      </section>
-     <h1>Grupo B</h1>
+     <h1 style="color: #fff;">Grupo B</h1>
      <section style="margin-top:0px;" class="secequipos">
      
           <?php
@@ -108,7 +108,7 @@ if (!empty($_SESSION['user'])) {
           }
           ?>
      </section>
-     <h1>Grupo C</h1>
+     <h1 style="color: #fff;">Grupo C</h1>
      <section style="margin-top:0px;" class="secequipos">
      
           <?php
@@ -152,7 +152,7 @@ if (!empty($_SESSION['user'])) {
           }
           ?>
      </section>
-     <h1>Grupo D</h1>
+     <h1 style="color: #fff;">Grupo D</h1>
      <section style="margin-top:0px;" class="secequipos">
 
           <?php
@@ -196,7 +196,7 @@ if (!empty($_SESSION['user'])) {
           }
           ?>
      </section>
-     <h1>Grupo E</h1>
+     <h1 style="color: #fff;">Grupo E</h1>
      <section style="margin-top:0px;" class="secequipos">
 
           <?php
@@ -240,7 +240,7 @@ if (!empty($_SESSION['user'])) {
           }
           ?>
      </section>
-     <h1>Grupo F</h1>
+     <h1 style="color: #fff;">Grupo F</h1>
      <section style="margin-top:0px;" class="secequipos">
 
           <?php
@@ -284,7 +284,7 @@ if (!empty($_SESSION['user'])) {
           }
           ?>
      </section>
-     <h1>Grupo G</h1>
+     <h1 style="color: #fff;">Grupo G</h1>
      <section style="margin-top:0px;" class="secequipos">
 
           <?php
@@ -328,7 +328,7 @@ if (!empty($_SESSION['user'])) {
           }
           ?>
      </section>
-     <h1>Grupo H</h1>
+     <h1 style="color: #fff;">Grupo H</h1>
      <section style="margin-top:0px;" class="secequipos">
 
           <?php
