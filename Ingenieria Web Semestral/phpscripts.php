@@ -44,11 +44,28 @@ function quick_user($id_user){
 }
 
 
+function quick_stadium($id_stadium){
+     include('config.php');
+     $quick_query = "SELECT * FROM estadios WHERE id = '" . $id_stadium . "';";
+     if ($conn_bd) {
+          $result = mysqli_query($conn_bd, $quick_query);
+          $return = mysqli_fetch_assoc($result);
+     }
+     return $return;
+}
+
 function display_matches($sql){
      include('config.php');
      if ($conn_bd) {
      $result = mysqli_query($conn_bd, $sql);
           while($partido = mysqli_fetch_assoc($result)){
+               if($partido['estadio'] != null){
+
+                    $estadio = "<span>Estadio  :  ".quick_stadium($partido['estadio'])['estadio']."</span>";
+               }
+               else{
+                    $estadio = "";
+               }
                $print_out = "
                <div class='cont_partido'>
                     <span>GRUPO ".$partido['grupo_p']."</span>
@@ -69,6 +86,7 @@ function display_matches($sql){
                          </div>
                     </div>
                     <div class='partido_detalles'>
+                         ".$estadio."
                          <span>Horario : ". $partido['horario_juego'] ."</span>
                          <span>Estado : ".$partido['estado']."</span>";
                     
