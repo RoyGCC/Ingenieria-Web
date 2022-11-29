@@ -21,16 +21,274 @@ if (!empty($_SESSION['user'])) {
      <div id="general_header"></div>
 
      <section>
+          <section class="classification-content inline-container">
+
+               <section class="titulos-partidos inline-container">
+
+                    <h5>Octavos</h5>
+                    <h4>Cuartos</h4>
+                    <h3>Semifinal</h3>
+                    <h2>Final</h2>
+                    <h3>Semifinal</h3>
+                    <h4>Cuartos</h4>
+                    <h5>Octavos</h5>
+
+               </section>
+
+               <section class="bracket-container">
 
 
-     </section>
+                    <section class="bracket">
 
-     <script>
-          <?php
-          include 'phpscripts.php';
-          chooseheader();
-          ?>
-     </script>
+                         <section class="octavos inline-container">
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                         </section>
+
+                         <section class="cuartos inline-container">
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                         </section>
+
+                         <section class="semi inline-container">
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+
+                         </section>
+
+                         <section class="final inline-container">
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                         </section>
+
+                    </section>
+
+                    <section class="bracket2">
+
+                         <section class="final inline-container">
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                         </section>
+
+
+                         <section class="semi inline-container">
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+
+                         </section>
+
+                         <section class="cuartos inline-container">
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                         </section>
+
+                         <section class="octavos inline-container">
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                         </section>
+
+                    </section>
+
+               </section>
+
+               <section class="bronze">
+
+                    <h2>Tercer Lugar</h2>
+
+                    <section class="bronze-container">
+
+                         <section class="match">
+
+                         </section>
+
+                         <section class="match">
+
+                         </section>
+
+                    </section>
+
+               </section>
+
+          </section>
+
+          <script>
+               <?php
+               include 'phpscripts.php';
+               chooseheader();
+               ?>
+          </script>
 </body>
 
 </html>
