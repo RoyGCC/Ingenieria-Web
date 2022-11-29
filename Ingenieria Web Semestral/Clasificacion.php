@@ -24,6 +24,7 @@ if (!empty($_SESSION['user'])) {
 
 
      </section>
+
      <script>
           <?php
           include 'phpscripts.php';
