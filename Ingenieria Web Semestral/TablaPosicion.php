@@ -27,11 +27,11 @@ if (!empty($_SESSION['user'])) {
                <?php
                include('config.php');
                $sql_query = "SELECT * FROM equipos WHERE grupo = 'A' ORDER BY puntos ASC;";
-               $result = mysqli_query($conn_bd, $sql_query);
+               $result = mysqli_query($conn_BD, $sql_query);
                $row = $result->fetch_assoc();
 
-               if ($conn_bd) {
-                    $result = mysqli_query($conn_bd, $sql_query);
+               if ($conn_BD) {
+                    $result = mysqli_query($conn_BD, $sql_query);
                     while ($equipos = mysqli_fetch_assoc($result)) {
                          echo "<div class='tablaspace'>
 
@@ -59,7 +59,7 @@ if (!empty($_SESSION['user'])) {
           <div>
           ";
                     }
-                    $conn_bd->close();
+                    $conn_BD->close();
                }
                ?>
           </section>
@@ -71,11 +71,11 @@ if (!empty($_SESSION['user'])) {
                <?php
                include('config.php');
                $sql_query = "SELECT * FROM equipos WHERE grupo = 'B' ORDER BY puntos ASC;";
-               $result = mysqli_query($conn_bd, $sql_query);
+               $result = mysqli_query($conn_BD, $sql_query);
                $row = $result->fetch_assoc();
 
-               if ($conn_bd) {
-                    $result = mysqli_query($conn_bd, $sql_query);
+               if ($conn_BD) {
+                    $result = mysqli_query($conn_BD, $sql_query);
                     while ($equipos = mysqli_fetch_assoc($result)) {
                          echo "<div class='tablaspace'>
 
@@ -103,7 +103,7 @@ if (!empty($_SESSION['user'])) {
                <div>
                ";
                     }
-                    $conn_bd->close();
+                    $conn_BD->close();
                }
                ?>
           </section>
@@ -115,11 +115,11 @@ if (!empty($_SESSION['user'])) {
                <?php
                include('config.php');
                $sql_query = "SELECT * FROM equipos WHERE grupo = 'C' ORDER BY puntos ASC;";
-               $result = mysqli_query($conn_bd, $sql_query);
+               $result = mysqli_query($conn_BD, $sql_query);
                $row = $result->fetch_assoc();
 
-               if ($conn_bd) {
-                    $result = mysqli_query($conn_bd, $sql_query);
+               if ($conn_BD) {
+                    $result = mysqli_query($conn_BD, $sql_query);
                     while ($equipos = mysqli_fetch_assoc($result)) {
                          echo "<div class='tablaspace'>
 
@@ -147,7 +147,7 @@ if (!empty($_SESSION['user'])) {
                <div>
                ";
                     }
-                    $conn_bd->close();
+                    $conn_BD->close();
                }
                ?>
           </section>
@@ -159,11 +159,11 @@ if (!empty($_SESSION['user'])) {
                <?php
                include('config.php');
                $sql_query = "SELECT * FROM equipos WHERE grupo = 'D' ORDER BY puntos ASC;";
-               $result = mysqli_query($conn_bd, $sql_query);
+               $result = mysqli_query($conn_BD, $sql_query);
                $row = $result->fetch_assoc();
 
-               if ($conn_bd) {
-                    $result = mysqli_query($conn_bd, $sql_query);
+               if ($conn_BD) {
+                    $result = mysqli_query($conn_BD, $sql_query);
                     while ($equipos = mysqli_fetch_assoc($result)) {
                          echo "<div class='tablaspace'>
 
@@ -191,7 +191,7 @@ if (!empty($_SESSION['user'])) {
                <div>
                ";
                     }
-                    $conn_bd->close();
+                    $conn_BD->close();
                }
                ?>
           </section>
@@ -203,11 +203,11 @@ if (!empty($_SESSION['user'])) {
                <?php
                include('config.php');
                $sql_query = "SELECT * FROM equipos WHERE grupo = 'E' ORDER BY puntos ASC;";
-               $result = mysqli_query($conn_bd, $sql_query);
+               $result = mysqli_query($conn_BD, $sql_query);
                $row = $result->fetch_assoc();
 
-               if ($conn_bd) {
-                    $result = mysqli_query($conn_bd, $sql_query);
+               if ($conn_BD) {
+                    $result = mysqli_query($conn_BD, $sql_query);
                     while ($equipos = mysqli_fetch_assoc($result)) {
                          echo "<div class='tablaspace'>
 
@@ -235,7 +235,7 @@ if (!empty($_SESSION['user'])) {
                <div>
                ";
                     }
-                    $conn_bd->close();
+                    $conn_BD->close();
                }
                ?>
           </section>
@@ -247,11 +247,11 @@ if (!empty($_SESSION['user'])) {
                <?php
                include('config.php');
                $sql_query = "SELECT * FROM equipos WHERE grupo = 'F' ORDER BY puntos ASC;";
-               $result = mysqli_query($conn_bd, $sql_query);
+               $result = mysqli_query($conn_BD, $sql_query);
                $row = $result->fetch_assoc();
 
-               if ($conn_bd) {
-                    $result = mysqli_query($conn_bd, $sql_query);
+               if ($conn_BD) {
+                    $result = mysqli_query($conn_BD, $sql_query);
                     while ($equipos = mysqli_fetch_assoc($result)) {
                          echo "<div class='tablaspace'>
 
@@ -279,7 +279,7 @@ if (!empty($_SESSION['user'])) {
                <div>
                ";
                     }
-                    $conn_bd->close();
+                    $conn_BD->close();
                }
                ?>
           </section>
@@ -291,11 +291,11 @@ if (!empty($_SESSION['user'])) {
                <?php
                include('config.php');
                $sql_query = "SELECT * FROM equipos WHERE grupo = 'G' ORDER BY puntos ASC;";
-               $result = mysqli_query($conn_bd, $sql_query);
+               $result = mysqli_query($conn_BD, $sql_query);
                $row = $result->fetch_assoc();
 
-               if ($conn_bd) {
-                    $result = mysqli_query($conn_bd, $sql_query);
+               if ($conn_BD) {
+                    $result = mysqli_query($conn_BD, $sql_query);
                     while ($equipos = mysqli_fetch_assoc($result)) {
                          echo "<div class='tablaspace'>
 
@@ -323,7 +323,7 @@ if (!empty($_SESSION['user'])) {
                <div>
                ";
                     }
-                    $conn_bd->close();
+                    $conn_BD->close();
                }
                ?>
           </section>
@@ -335,11 +335,11 @@ if (!empty($_SESSION['user'])) {
                <?php
                include('config.php');
                $sql_query = "SELECT * FROM equipos WHERE grupo = 'H' ORDER BY puntos ASC;";
-               $result = mysqli_query($conn_bd, $sql_query);
+               $result = mysqli_query($conn_BD, $sql_query);
                $row = $result->fetch_assoc();
 
-               if ($conn_bd) {
-                    $result = mysqli_query($conn_bd, $sql_query);
+               if ($conn_BD) {
+                    $result = mysqli_query($conn_BD, $sql_query);
                     while ($equipos = mysqli_fetch_assoc($result)) {
                          echo "<div class='tablaspace'>
 
@@ -367,7 +367,7 @@ if (!empty($_SESSION['user'])) {
                <div>
                ";
                     }
-                    $conn_bd->close();
+                    $conn_BD->close();
                }
                ?>
           </section>
