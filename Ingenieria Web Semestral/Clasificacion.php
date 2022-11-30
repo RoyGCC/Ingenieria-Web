@@ -1,4 +1,5 @@
 <?php
+include('phpscripts.php');
 session_start();
 if (!empty($_SESSION['user'])) {
      echo $_SESSION['user'];
@@ -6,7 +7,6 @@ if (!empty($_SESSION['user'])) {
 }
 ?>
 <html>
-
 <head>
      <meta charset='utf-8'>
      <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -16,10 +16,10 @@ if (!empty($_SESSION['user'])) {
      <link rel="icon" href="resources/img/Logo.png">
      <script src="./resources/js/templates.js"></script>
 </head>
-
 <body class="general_backgroundImage">
      <div id="general_header"></div>
 
+<<<<<<< HEAD
      <?php
 
        
@@ -231,6 +231,7 @@ if (!empty($_SESSION['user'])) {
                               <img src='./resources/img/Banderas/". $pic2D . "'>   
 
                          </div>
+
                     </section>
 
                     <section class='cuartos inline-container'>
@@ -274,6 +275,8 @@ if (!empty($_SESSION['user'])) {
                               
 
                          </div>
+
+
                     </section>
 
                     <section class='final inline-container'>
@@ -283,6 +286,7 @@ if (!empty($_SESSION['user'])) {
                               
 
                          </div>
+
                     </section>
 
                </section>
@@ -296,6 +300,7 @@ if (!empty($_SESSION['user'])) {
                               
 
                          </div>
+
                     </section>
 
 
@@ -312,6 +317,8 @@ if (!empty($_SESSION['user'])) {
                               
 
                          </div>
+
+
                     </section>
 
                     <section class='cuartos inline-container'>
@@ -339,6 +346,7 @@ if (!empty($_SESSION['user'])) {
                               
 
                          </div>
+
                     </section>
 
                     <section class='octavos inline-container'>
@@ -407,7 +415,9 @@ if (!empty($_SESSION['user'])) {
                          <div><h1>".$name2F."</h1></div>
 
                          </div>
+
                     </section>
+
                </section>
 
           </section>
@@ -423,11 +433,282 @@ if (!empty($_SESSION['user'])) {
                     </section>
 
                     <section class='match'>
+=======
+     <section>
+          <section class="classification-content inline-container">
+
+               <section class="titulos-partidos inline-container">
+
+                    <h5>Octavos</h5>
+                    <h4>Cuartos</h4>
+                    <h3>Semifinal</h3>
+                    <h2>Final</h2>
+                    <h3>Semifinal</h3>
+                    <h4>Cuartos</h4>
+                    <h5>Octavos</h5>
+
+               </section>
+
+               <section class="bracket-container">
+
+
+                    <section class="bracket">
+
+                         <section class="octavos inline-container">
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                         </section>
+
+                         <section class="cuartos inline-container">
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                         </section>
+
+                         <section class="semi inline-container">
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+
+                         </section>
+
+                         <section class="final inline-container">
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                         </section>
 
                     </section>
+
+                    <section class="bracket2">
+
+                         <section class="final inline-container">
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                         </section>
+
+
+                         <section class="semi inline-container">
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+
+                         </section>
+
+                         <section class="cuartos inline-container">
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                         </section>
+
+                         <section class="octavos inline-container">
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                              <div class="match">
+
+
+
+                              </div>
+
+                         </section>
+>>>>>>> parent of eefcb50 (Merge pull request #21 from RoyGCC/master)
+
+                    </section>
+
+               </section>
+
+<<<<<<< HEAD
+          </section>
+=======
+               <section class="bronze">
+
+                    <h2>Tercer Lugar</h2>
+
+                    <section class="bronze-container">
+
+                         <section class="match">
+
+                         </section>
+
+                         <section class="match">
+
+                         </section>
+
+                    </section>
+
                </section>
 
           </section>
+
+          <script>
+               <?php
+               include 'phpscripts.php';
+               chooseheader();
+               ?>
+          </script>
+</body>
+>>>>>>> parent of eefcb50 (Merge pull request #21 from RoyGCC/master)
 
      </section>";
 
@@ -439,5 +720,4 @@ if (!empty($_SESSION['user'])) {
           ?>
      </script>
 </body>
-
 </html>

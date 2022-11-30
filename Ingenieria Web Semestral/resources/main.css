@@ -68,13 +68,25 @@
   color: white;
   display: grid;
   grid-template-columns: 0.3fr 1fr;
+  padding-inline: 5%;
   margin-top: 20px;
 }
 
 .secequipos-selec h1{
+  font-size: 12.5cqi;
   margin-bottom: 1.25rem;
 }
 
+.secequipos-selec h2{
+  font-size: 10cqi;
+  margin-top: 1.25rem;
+}
+
+.equipo-selec .secequipos-selec .logros{
+  font-size: 7cqi;
+  text-align: left;
+  line-height: 15cqi;
+}
 
 .jugadores-selec h1{
   font-size: 4cqi;
@@ -125,12 +137,18 @@
 }
 
 
+
+
+
+
+
 .sechome {
   display: flex;
   flex-wrap: wrap;
   margin-block: 30px;
   justify-content: space-around;
 }
+
 
 
 .contenidoextra {
@@ -146,10 +164,12 @@
 }
 
 .extra2 {
+  margin-block: 10px;
   display: flex;
   flex-direction: column;
+  width: 85%;
+  justify-content: space-around;
   align-items: center;
-  text-align: center;
 }
 
 .laebb {
@@ -182,11 +202,11 @@
 
 
 }
-
+/*
 .inline-container {
-  align-items: center;
+  container-type: inline-size;
 }
-
+*/
 .navbar-home {
   background-color: #ac224e;
   top: 0;
@@ -454,14 +474,21 @@
   background: #000;
   color: #fff;
   font-family: var(--fuente_formularios);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
   box-sizing: border-box;
   padding: 70px 30px;
   border-radius: 20px;
+  margin-block: 40px;
   padding-bottom: 40px;
   overflow: hidden;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
 .register-box h1 {
@@ -534,7 +561,7 @@
 
 
 
-/* Estilos de la página de Resultados */
+/* Estilos de la página de Clasificación */
 
 .cont_partido{
   display: flex;
@@ -548,42 +575,39 @@
   margin: 5px;
 }
 
-.partido_equipos{
+.classification-content *h2{
+  font-size: 3cqi;
+}
+
+.classification-content *h3{
+  font-size: 2.5cqi;
+}
+
+.classification-content *h4{
+  font-size: 2cqi;
+}
+
+.classification-content *h5{
+  font-size: 1.5cqi;
+}
+
+.bracket-container{
+  width: 100vw;
+}
+
+.bracket-container{
   display: flex;
-  align-items: center;
-  background-image: url("img/Fondo4.png");
-  background-size:cover;
-  margin: 5px;
-  padding: 5px;
+   flex-direction: row;
+   margin-top: 20px;
 }
 
-.sec_partido{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.bracket > section *{
-  justify-self: center;
-}
-
-.match{
-  height: 30cqi;
-  background-color: white;
-  margin: 5cqi;
-  border-radius: 8cqi;
-}
-
-.bracket .match:nth-child(even){
-  background-color: #ffd2d2;
-}
-
-.bracket2 .match:nth-child(odd){
-  background-color: #ffd2d2;
-}
-
-.titulos-partidos{
-  margin-top: 30px;
+<<<<<<< HEAD
+.bracket, .bracket2{
+=======
+.sec_partido h1{
+  padding: 10px;
+  margin: 10px;
   color: white;
 }
 
@@ -608,44 +632,251 @@
 }
 
 /* Estilos de Clasificación */
+.classification-content *h2 {
+  font-size: 3cqi;
+}
 
-.bracket{
+.classification-content *h3 {
+  font-size: 2.5cqi;
+}
+
+.classification-content *h4 {
+  font-size: 2cqi;
+}
+
+.classification-content *h5 {
+  font-size: 1.5cqi;
+}
+
+.bracket-container {
+  width: 100vw;
+}
+
+.bracket-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+
+.bracket,
+.bracket2 {
+>>>>>>> parent of eefcb50 (Merge pull request #21 from RoyGCC/master)
   width: 100%;
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.bronze {
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.bronze section{
+  height: 100%;
   display: flex;
 }
 
-
-.bracket>section{
+<<<<<<< HEAD
+.bracket > section, .bracket2 > section{
+=======
+.bracket>section,
+.bracket2>section {
+>>>>>>> parent of eefcb50 (Merge pull request #21 from RoyGCC/master)
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  width: 100%;
+<<<<<<< HEAD
 }
 
-.bracket > section *{
+.bracket > section *, .bracket2 > section *{
+  justify-self: center;
+=======
+}
+
+.bracket>section * {
   justify-self: center;
 }
 
-.match{
+.match {
   height: 30cqi;
   background-color: white;
+  margin: 5cqi;
   border-radius: 8cqi;
-  margin: 20px;
 }
 
 .bracket .match:nth-child(even) {
+  background-color: #ffd2d2;
+}
+
+.bracket2 .match:nth-child(odd) {
+  background-color: #ffd2d2;
+}
+
+.titulos-partidos {
+  margin-top: 30px;
+  color: white;
+>>>>>>> parent of eefcb50 (Merge pull request #21 from RoyGCC/master)
+  text-align: center;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
+}
+
+<<<<<<< HEAD
+.match{
+  font-size: 14cqi;
+  display: grid;
+  grid-template-columns: 1fr 0.2fr 1fr;
+  align-items: center;
+  height: 30cqi;
+  background-color: white;
+  margin: 5cqi;
+  border-radius: 8cqi;
+}
+
+.match * {
+  font-size: 8cqi;
+}
+
+.match > div{
+  display: flex;
+  align-items: center;
+}
+
+.match h1{
+  margin: auto;
+}
+
+.bracket{
+  text-align: left;
+}
+
+.bracket2 *{
+  text-align: right;
+}
+
+.bracket .match{
+  padding-left: 5cqi;
+}
+
+.bracket2 .match{
+  padding-right: 5cqi;
+}
+
+
+.match img{
+  width: 20cqi;
+  -webkit-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.75); 
+  box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.75);
+=======
+.bronze {
+  text-align: center;
+  color: white;
+  width: calc(100%/4);
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 0;
+}
+
+.bronze-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.bronze .match {
+  width: 100%;
+  height: 3.8cqi;
+  margin: 0.7cqi;
+  border-radius: 1cqi;
+}
+
+.classification-content *h2 {
+  font-size: 3cqi;
+}
+
+.classification-content *h3 {
+  font-size: 2.5cqi;
+}
+
+.classification-content *h4 {
+  font-size: 2cqi;
+}
+
+.classification-content *h5 {
+  font-size: 1.5cqi;
+}
+
+.bracket-container {
+  width: 100vw;
+}
+
+.bracket-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+
+.bracket,
+.bracket2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.bracket>section,
+.bracket2>section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.bracket>section * {
+  justify-self: center;
+}
+
+.match {
+  height: 30cqi;
+  background-color: white;
+  margin: 5cqi;
+  border-radius: 8cqi;
+}
+
+.bracket .match:nth-child(even) {
+  background-color: #ffd2d2;
+}
+
+.bracket2 .match:nth-child(odd) {
+  background-color: #ffd2d2;
+}
+
+.titulos-partidos {
+  margin-top: 30px;
+  color: white;
+  text-align: center;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
+}
+
+.bronze {
+  text-align: center;
+  color: white;
+  width: calc(100%/4);
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 0;
+}
+
+.bronze-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.bronze .match {
+  width: 100%;
+  height: 3.8cqi;
+  margin: 0.7cqi;
+  border-radius: 1cqi;
+>>>>>>> parent of eefcb50 (Merge pull request #21 from RoyGCC/master)
+}
+
+.bracket .match:nth-child(even){
   background-color: #ffd2d2;
 }
 
@@ -657,6 +888,9 @@
   margin-top: 30px;
   color: white;
   text-align: center;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
 }
 
 .bronze{
@@ -669,23 +903,10 @@
   bottom: 0;
 }
 
-
-
-.tablapos {
-  margin-block: 0px;
-  padding-inline: 0%;
+.bronze-container{
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 0px;
-  border-bottom: 1pt solid #00d9ff;
-  color: #fff;
-
-}
-
-.tablapos td {
-  width: 50px;
-  color: #fff;
+<<<<<<< HEAD
+  flex-direction: row;
 }
 
 .bronze .match{
@@ -693,4 +914,111 @@
   height: 3.8cqi;
   margin: 0.7cqi;
   border-radius: 1cqi;
+}
+
+.classification-content *h2{
+  font-size: 3cqi;
+}
+
+.classification-content *h3{
+  font-size: 2.5cqi;
+}
+
+.classification-content *h4{
+  font-size: 2cqi;
+}
+
+.classification-content *h5{
+  font-size: 1.5cqi;
+}
+
+.bracket-container{
+  width: 100vw;
+}
+
+.bracket-container{
+  display: flex;
+   flex-direction: row;
+   margin-top: 20px;
+}
+
+
+.bracket, .bracket2{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.bracket > section, .bracket2 > section{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.bracket > section > *{
+  justify-self: center;
+}
+
+.match{
+  height: 30cqi;
+  background-color: white;
+  margin: 5cqi;
+  border-radius: 8cqi;
+}
+
+.bracket .match:nth-child(even){
+  background-color: #ffd2d2;
+}
+
+.bracket2 .match:nth-child(odd),.bronze .match:nth-child(1){
+  background-color: #ffd2d2;
+}
+
+.titulos-partidos{
+  margin-top: 30px;
+  color: white;
+  text-align: center;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
+}
+
+.bronze{
+  text-align: center;
+  color: white;
+  width: calc(100%/4);
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  bottom: 0;
+}
+
+.bronze-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.bronze .match{
+  width: 100%;
+  height: 3.7cqi;
+  margin: 0.7cqi;
+  border-radius: 1cqi;
+=======
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0px;
+  border-bottom: 1pt solid #00d9ff;
+  color: #fff;
+  
+}
+.tablapos td{
+  width: 50px;
+  color: #fff;
+}
+
+.tablapos th{
+  width: 250px; 
+  color: #fff;
+>>>>>>> parent of eefcb50 (Merge pull request #21 from RoyGCC/master)
 }

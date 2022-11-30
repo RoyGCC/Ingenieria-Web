@@ -1,6 +1,8 @@
 <?php
-include('config.php');
+<<<<<<< HEAD
+=======
 include 'phpscripts.php';
+>>>>>>> parent of eefcb50 (Merge pull request #21 from RoyGCC/master)
 session_start();
 if (!empty($_SESSION['user'])) {
     echo $_SESSION['user'];
@@ -49,18 +51,10 @@ if(!$_GET['equipoSeleccionado']){
                 if($row['id'] == $equipo->id){
                     echo '<h1 class="logros">'.$equipo->logros.'</h1>';
                 }
-            }
-            if(!empty($_SESSION['user'])){
-                $compare_team = quick_user($_SESSION['user']);
-                if($compare_team['id_equipo_fav'] == $_GET['equipoSeleccionado']){
-                    echo "<a href='Favorito.php?'><img class='favorito_team' src='./resources/img/favorite_set.png'></a>";
-                }   
-                else{
-                    echo "<a href='setfavorite.php?newfav=". $_GET['equipoSeleccionado'] ."'><img class='favorito_team' src='./resources/img/favorite_unset.png'></a>";
-                }
+               
             }
             ?>
-            
+
         </section>
 
         <section class="jugadores-selec inline-container">
@@ -70,6 +64,7 @@ if(!$_GET['equipoSeleccionado']){
             <section class="secjugadores-selec inline-container">
 
             <?php
+            include('config.php');
                 $sql_query = "SELECT * FROM jugadores_equipo a
                 JOIN equipos b ON a.id_equipo = b.id
                 WHERE id_equipo = '" . $_GET['equipoSeleccionado'] . "';";
@@ -106,6 +101,7 @@ if(!$_GET['equipoSeleccionado']){
         
     <script>
         <?php
+        include 'phpscripts.php';
         chooseheader();
         ?>
     </script>
