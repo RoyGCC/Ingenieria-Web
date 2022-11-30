@@ -1,6 +1,5 @@
 <?php
 session_start();
-<<<<<<< HEAD
 
 include "acceso.php";
 acceso('ADMIN');
@@ -41,33 +40,6 @@ acceso('ADMIN');
        }
    
      }
-=======
-include 'phpscripts.php';
-include "config.php";
-if($_SESSION['myrank'] != "admin"){
-     header("Location: loginsemestral.php");
-}
-
-if($_SERVER['REQUEST_METHOD'] == "POST"){
-     if($_POST['j_ganados'] == null){
-          $_POST['j_ganados'] = 'j_ganados';}
-     if ($_POST['j_empatados'] == null) {
-          $_POST['j_empatados'] = 'j_empatados';}
-     if ($_POST['j_perdidos'] == null) {
-          $_POST['j_perdidos'] = 'j_perdidos';}
-     if($conn_BD){
-     /*$Total_Games = $_POST['j_ganados'] + $_POST['j_empatados'] + $_POST['j_perdidos'];*/
-     $query = "UPDATE equipos 
-               SET  j_ganados = ". $_POST['j_ganados'].", j_empatados = ". $_POST['j_empatados'].", j_perdidos = ". $_POST['j_perdidos']." 
-               WHERE id = " . $_POST['equipoSelect'].";";
-     mysqli_query($conn_BD,$query);
-     $query_jjugados = "UPDATE equipos 
-                        SET j_jugados = j_ganados+j_perdidos+j_empatados
-                        WHERE id =".$_POST['equipoSelect'].";";
-     mysqli_query($conn_BD,$query_jjugados);
-     header("Location:Home.php");}
-}
->>>>>>> parent of eefcb50 (Merge pull request #21 from RoyGCC/master)
 ?>
 
 <html>
@@ -92,20 +64,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                <img src="resources/img/Logo.png" class="avatar" alt="Avatar Image">
                <h1>Ingresar estadisticas de equipo</h1>
                <form method="post">
-<<<<<<< HEAD
                     <!-- Equipo SELECT --> 
                     <label for="Firstname">Equipo</label>
                     <select name="select">
                          <option value="Qatar">Qatar</option>
                          <option value="Ecuador">Ecuador</option>
                          <option value="Senegal">Senegal</option>
-=======
-                    <label for="equipoSelect">Equipo</label>
-                    <select name="equipoSelect">
-                         <option value="27">Qatar</option>
-                         <option value="12">Ecuador</option>
-                         <option value="28">Senegal</option>
->>>>>>> parent of eefcb50 (Merge pull request #21 from RoyGCC/master)
                     </select>
                     <!-- Partidos Jugados INPUT -->
                     <label for="j_ganados">Partidos Ganados</label>
@@ -122,11 +86,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                </div>
           </body>        
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> parent of eefcb50 (Merge pull request #21 from RoyGCC/master)
      </section>
      <script>
           <?php
