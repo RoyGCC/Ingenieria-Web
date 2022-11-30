@@ -449,8 +449,4 @@ if (!empty($_SESSION['user'])) {
           ?>
      </script>
 </body>
-<<<<<<< Updated upstream
 </html>
-=======
-</html>
->>>>>>> Stashed changes
