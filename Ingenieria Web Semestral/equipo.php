@@ -1,8 +1,4 @@
 <?php
-<<<<<<< HEAD
-=======
-include 'phpscripts.php';
->>>>>>> parent of eefcb50 (Merge pull request #21 from RoyGCC/master)
 session_start();
 if (!empty($_SESSION['user'])) {
     echo $_SESSION['user'];
