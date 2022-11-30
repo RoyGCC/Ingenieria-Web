@@ -24,9 +24,11 @@ if (!empty($_SESSION['user'])) {
           <label for="fecha_Selected">Busqueda por día</label>
           <input type="date" name="fecha_Selected">
           <input type="submit" value="buscar por fecha">
+          
      </form>
      <?php
           if (!empty($_GET['fecha_Selected'])) {
+               echo"<a href='Resultados.php'><button type='reset'>Reset</button></a>";
                echo "<h3>Partidos del ".$_GET['fecha_Selected']."</h3>";
           }
      ?>

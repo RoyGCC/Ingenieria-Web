@@ -85,9 +85,10 @@ function display_matches($sql){
                               </a>
                          </div>
                     </div>
+                    
                     <div class='partido_detalles'>
                          ".$estadio."
-                         <span>Horario : ". $partido['horario_juego'] ."</span>
+                         <span><a href='Resultados.php?fecha_Selected=".date("Y-m-d",strtotime($partido['horario_juego']))."'>Horario : ". $partido['horario_juego'] ."</a></span>
                          <span>Estado : ".$partido['estado']."</span>";
                     
                     if($partido['estado'] == 'Finalizado' && $partido['id_equipo_ganador'] == null){
