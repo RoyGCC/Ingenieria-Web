@@ -169,65 +169,57 @@ if (!empty($_SESSION['user'])) {
 
                          <div class='match'>
 
-                              <div><h1>".$name1B."</h1></div>
-                              <h2>|</h2>
-                              <img src='./resources/img/Banderas/". $pic1B . "'>
-
-                         </div>
-
-                              <div class='match'>
-
-                              <div><h1>".$name2A."</h1></div>
-                              <h2>|</h2>
-                              <img src='./resources/img/Banderas/". $pic2A . "'>                              
+                              <h1>".$name1B."</h1>
+                              <img style='width: 50px; height: 25px;' src='./resources/img/Banderas/". $pic1B . "'>
 
                          </div>
 
                          <div class='match'>
 
-                              <div><h1>".$name1A."</h1></div>
-                              <h2>|</h2>
-                              <img src='./resources/img/Banderas/". $pic1A . "'>     
+                              <h1>".$name2A."</h1>
+                              <img style='width: 50px; height: 25px;' src='./resources/img/Banderas/". $pic2A . "'>                              
 
                          </div>
 
                          <div class='match'>
 
-                              <div><h1>".$name2B."</h1></div>
-                              <h2>|</h2>
-                              <img src='./resources/img/Banderas/". $pic2B . "'>   
+                         <h1>".$name1A."</h1>
+                         <img style='width: 50px; height: 25px;' src='./resources/img/Banderas/". $pic1A . "'>     
 
                          </div>
 
                          <div class='match'>
 
-                              <div><h1>".$name1D."</h1></div>
-                              <h2>|</h2>
-                              <img src='./resources/img/Banderas/". $pic1D . "'>  
+                         <h1>".$name2B."</h1>
+                         <img style='width: 50px; height: 25px;' src='./resources/img/Banderas/". $pic2B . "'>   
 
                          </div>
 
                          <div class='match'>
 
-                              <div><h1>".$name2C."</h1></div>
-                              <h2>|</h2>
-                              <img src='./resources/img/Banderas/". $pic2C . "'>                                
+                         <h1>".$name1D."</h1>
+                         <img style='width: 50px; height: 25px;' src='./resources/img/Banderas/". $pic1D . "'>  
 
                          </div>
 
                          <div class='match'>
 
-                              <div><h1>".$name1C."</h1></div>
-                              <h2>|</h2>
-                              <img src='./resources/img/Banderas/". $pic1C . "'>   
+                         <h1>".$name2C."</h1>
+                         <img style='width: 50px; height: 25px;' src='./resources/img/Banderas/". $pic2C . "'>                                
 
                          </div>
 
                          <div class='match'>
 
-                              <div><h1>".$name2D."</h1></div>
-                              <h2>|</h2>
-                              <img src='./resources/img/Banderas/". $pic2D . "'>   
+                         <h1>".$name1C."</h1>
+                         <img style='width: 50px; height: 25px;' src='./resources/img/Banderas/". $pic1C . "'>   
+
+                         </div>
+
+                         <div class='match'>
+
+                         <h1>".$name2D."</h1>
+                         <img style='width: 50px; height: 25px;' src='./resources/img/Banderas/". $pic2D . "'>   
 
                          </div>
 
@@ -352,66 +344,58 @@ if (!empty($_SESSION['user'])) {
 
                          <div class='match'>
 
-                         <img src='./resources/img/Banderas/". $pic1H . "'> 
-                         <h2>|</h2>
-                         <div><h1>".$name1H."</h1></div>
+                         <h1>".$name1H."</h1>
+                         <img style='width: 50px; height: 25px;' src='./resources/img/Banderas/". $pic1H . "'>   
 
                          </div>
 
                          <div class='match'>
 
-                         <img src='./resources/img/Banderas/". $pic2G . "'>
-                         <h2>|</h2>
-                         <div><h1>".$name2G."</h1></div>
+                         <h1>".$name2G."</h1>
+                         <img style='width: 50px; height: 25px;' src='./resources/img/Banderas/". $pic2G . "'>  
 
 
                          </div>
 
                          <div class='match'>
 
-                         <img src='./resources/img/Banderas/". $pic1G . "'>
-                         <h2>|</h2> 
-                         <div><h1>".$name1G."</h1></div>
+                         <h1>".$name1G."</h1>
+                         <img style='width: 50px; height: 25px;' src='./resources/img/Banderas/". $pic1G . "'>  
 
                          </div>
 
                          <div class='match'>
 
-                         <img src='./resources/img/Banderas/". $pic2H . "'>
-                         <h2>|</h2>
-                         <div><h1>".$name2H."</h1></div>
+                         <h1>".$name2H."</h1>
+                         <img style='width: 50px; height: 25px;' src='./resources/img/Banderas/". $pic2H . "'>  
 
                          </div>
 
                          <div class='match'>
 
-                         <img src='./resources/img/Banderas/". $pic1F . "'>
-                         <h2>|</h2>
-                         <div><h1>".$name1F."</h1></div> 
+                         <h1>".$name1F."</h1>
+                         <img style='width: 50px; height: 25px;' src='./resources/img/Banderas/". $pic1F . "'>  
 
                          </div>
 
                          <div class='match'>
 
-                         <img src='./resources/img/Banderas/". $pic2E . "'>
-                         <h2>|</h2>
-                         <div><h1>".$name2E."</h1></div>  
+                         <h1>".$name2E."</h1>
+                         <img style='width: 50px; height: 25px;' src='./resources/img/Banderas/". $pic2E . "'>  
 
                          </div>
 
                          <div class='match'>
 
-                         <img src='./resources/img/Banderas/". $pic1E . "'>
-                         <h2>|</h2>
-                         <div><h1>".$name1E."</h1></div> 
+                         <h1>".$name1E."</h1>
+                         <img style='width: 50px; height: 25px;' src='./resources/img/Banderas/". $pic1E . "'>  
 
                          </div>
 
                          <div class='match'>
 
-                         <img src='./resources/img/Banderas/". $pic2F . "'> 
-                         <h2>|</h2> 
-                         <div><h1>".$name2F."</h1></div>
+                         <h1>".$name2F."</h1>
+                         <img style='width: 50px; height: 25px;' src='./resources/img/Banderas/". $pic2F . "'>  
 
                          </div>
 
