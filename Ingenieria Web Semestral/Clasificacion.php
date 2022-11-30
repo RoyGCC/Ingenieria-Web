@@ -1,5 +1,4 @@
 <?php
-include('phpscripts.php');
 session_start();
 if (!empty($_SESSION['user'])) {
      echo $_SESSION['user'];
@@ -7,6 +6,7 @@ if (!empty($_SESSION['user'])) {
 }
 ?>
 <html>
+
 <head>
      <meta charset='utf-8'>
      <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -16,6 +16,7 @@ if (!empty($_SESSION['user'])) {
      <link rel="icon" href="resources/img/Logo.png">
      <script src="./resources/js/templates.js"></script>
 </head>
+
 <body class="general_backgroundImage">
      <div id="general_header"></div>
 
@@ -230,7 +231,6 @@ if (!empty($_SESSION['user'])) {
                               <img src='./resources/img/Banderas/". $pic2D . "'>   
 
                          </div>
-
                     </section>
 
                     <section class='cuartos inline-container'>
@@ -274,8 +274,6 @@ if (!empty($_SESSION['user'])) {
                               
 
                          </div>
-
-
                     </section>
 
                     <section class='final inline-container'>
@@ -285,7 +283,6 @@ if (!empty($_SESSION['user'])) {
                               
 
                          </div>
-
                     </section>
 
                </section>
@@ -299,7 +296,6 @@ if (!empty($_SESSION['user'])) {
                               
 
                          </div>
-
                     </section>
 
 
@@ -316,8 +312,6 @@ if (!empty($_SESSION['user'])) {
                               
 
                          </div>
-
-
                     </section>
 
                     <section class='cuartos inline-container'>
@@ -345,7 +339,6 @@ if (!empty($_SESSION['user'])) {
                               
 
                          </div>
-
                     </section>
 
                     <section class='octavos inline-container'>
@@ -414,9 +407,7 @@ if (!empty($_SESSION['user'])) {
                          <div><h1>".$name2F."</h1></div>
 
                          </div>
-
                     </section>
-
                </section>
 
           </section>
@@ -434,7 +425,6 @@ if (!empty($_SESSION['user'])) {
                     <section class='match'>
 
                     </section>
-
                </section>
 
           </section>
@@ -449,4 +439,5 @@ if (!empty($_SESSION['user'])) {
           ?>
      </script>
 </body>
+
 </html>

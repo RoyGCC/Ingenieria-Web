@@ -1,4 +1,5 @@
 <?php
+include('phpscripts.php');
 session_start();
 if (!empty($_SESSION['user'])) {
      echo $_SESSION['user'];
@@ -19,14 +20,60 @@ if (!empty($_SESSION['user'])) {
 
 <body class="general_backgroundImage">
      <div id="general_header"></div>
-
-     <section>
-
-
+     <form action="" method="get">
+          <label for="fecha_Selected">Busqueda por día</label>
+          <input type="date" name="fecha_Selected">
+          <input type="submit" value="buscar por fecha">
+          
+     </form>
+     <?php
+          if (!empty($_GET['fecha_Selected'])) {
+               echo"<a href='Resultados.php'><button type='reset'>Reset</button></a>";
+               echo "<h3>Partidos del ".$_GET['fecha_Selected']."</h3>";
+          }
+     ?>
+     <section class="sec_partido">
+          <h1>PARTIDOS POR JUGAR O EN JUEGO</h1>
+          <?php
+          if (!empty($_GET['fecha_Selected'])) {
+               $sql_all_matches = "SELECT * 
+                              FROM partidos p LEFT JOIN equipos e 
+                              ON  p.id_equipo1 = e.id && p.id_equipo2 = e.id && p.id_equipo_ganador = e.id
+                              WHERE p.estado != 'Finalizado' AND p.horario_juego >= '" . $_GET['fecha_Selected'] . " 00:00:00' AND p.horario_juego <= '" . $_GET['fecha_Selected'] . " 23:59:59'
+                              ORDER BY p.horario_juego ASC;";
+               display_matches($sql_all_matches);
+          } else {
+               $sql_all_matches = "SELECT * 
+                              FROM partidos p LEFT JOIN equipos e 
+                              ON  p.id_equipo1 = e.id && p.id_equipo2 = e.id AND p.id_equipo_ganador = e.id
+                              WHERE p.estado != 'Finalizado'
+                              ORDER BY p.horario_juego ASC;";
+               display_matches($sql_all_matches);
+          }
+          ?>
+     </section>
+     <section class="sec_partido">
+          <h1>PARTIDOS Finalizados</h1>
+          <?php
+          if (!empty($_GET['fecha_Selected'])) {
+               $sql_query_played = "SELECT * 
+                              FROM partidos p LEFT JOIN equipos e 
+                              ON  p.id_equipo1 = e.id && p.id_equipo2 = e.id && p.id_equipo_ganador = e.id
+                              WHERE p.estado = 'Finalizado' AND p.horario_juego >= '" . $_GET['fecha_Selected'] . " 00:00:00' AND p.horario_juego <= '" . $_GET['fecha_Selected'] . " 23:59:59'
+                              ORDER BY p.horario_juego ASC;";
+               display_matches($sql_query_played);
+          } else {
+               $sql_query_played = "SELECT * 
+                              FROM partidos p LEFT JOIN equipos e 
+                              ON  p.id_equipo1 = e.id && p.id_equipo2 = e.id && p.id_equipo_ganador = e.id
+                              WHERE p.estado = 'Finalizado'
+                              ORDER BY p.horario_juego ASC;";
+               display_matches($sql_query_played);
+          }
+          ?>
      </section>
      <script>
           <?php
-          include 'phpscripts.php';
           chooseheader();
           ?>
      </script>

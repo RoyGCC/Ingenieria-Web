@@ -70,16 +70,42 @@ INSERT INTO `equipos` (`id`, `equipo`, `grupo`, `dir_bandera`, `puntos`, `j_juga
 	(32, 'Uruguay', 'H', 'Uruguay.webp', 0, 0, 0, 0, 0);
 /*!40000 ALTER TABLE `equipos` ENABLE KEYS */;
 
+-- Volcando estructura para tabla humanrightsaresecondary.estadios
+CREATE TABLE IF NOT EXISTS `estadios` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `estadio` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla humanrightsaresecondary.estadios: ~8 rows (aproximadamente)
+DELETE FROM `estadios`;
+/*!40000 ALTER TABLE `estadios` DISABLE KEYS */;
+INSERT INTO `estadios` (`id`, `estadio`) VALUES
+	(1, 'Ahmad Bin Ali'),
+	(2, 'Al Bayt'),
+	(3, 'Al Janoub'),
+	(4, 'Al Thumama'),
+	(5, 'Ciudad de la Educación'),
+	(6, 'Internacional Khalifa'),
+	(7, 'Lusail'),
+	(8, 'Ras Abu Aboud');
+/*!40000 ALTER TABLE `estadios` ENABLE KEYS */;
+
 -- Volcando estructura para tabla humanrightsaresecondary.grupos
 CREATE TABLE IF NOT EXISTS `grupos` (
   `grupo` char(1) NOT NULL,
   PRIMARY KEY (`grupo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla humanrightsaresecondary.grupos: ~8 rows (aproximadamente)
+-- Volcando datos para la tabla humanrightsaresecondary.grupos: ~13 rows (aproximadamente)
 DELETE FROM `grupos`;
 /*!40000 ALTER TABLE `grupos` DISABLE KEYS */;
 INSERT INTO `grupos` (`grupo`) VALUES
+	('1'),
+	('2'),
+	('3'),
+	('4'),
+	('8'),
 	('A'),
 	('B'),
 	('C'),
@@ -101,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `jugadores_equipo` (
   CONSTRAINT `FK__equipos` FOREIGN KEY (`id_equipo`) REFERENCES `equipos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=609 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla humanrightsaresecondary.jugadores_equipo: ~608 rows (aproximadamente)
+-- Volcando datos para la tabla humanrightsaresecondary.jugadores_equipo: ~607 rows (aproximadamente)
 DELETE FROM `jugadores_equipo`;
 /*!40000 ALTER TABLE `jugadores_equipo` DISABLE KEYS */;
 INSERT INTO `jugadores_equipo` (`id_jugador`, `id_equipo`, `nombre`, `marco_dir`) VALUES
@@ -726,26 +752,30 @@ CREATE TABLE IF NOT EXISTS `partidos` (
   `id_equipo_ganador` int(11) DEFAULT NULL,
   `estado` varchar(30) NOT NULL DEFAULT 'Inactivo',
   `grupo_p` char(1) NOT NULL,
+  `estadio` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_partido`),
   KEY `FK_partidos_equipos` (`id_equipo1`),
   KEY `FK_partidos_equipos_2` (`id_equipo2`),
   KEY `FK_partidos_equipos_3` (`id_equipo_ganador`),
   KEY `FK_partidos_Grupo` (`grupo_p`),
+  KEY `estadio` (`estadio`),
   CONSTRAINT `FK_partidos_equipos` FOREIGN KEY (`id_equipo1`) REFERENCES `equipos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_partidos_equipos_2` FOREIGN KEY (`id_equipo2`) REFERENCES `equipos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_partidos_equipos_3` FOREIGN KEY (`id_equipo_ganador`) REFERENCES `equipos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_partidos_estadio` FOREIGN KEY (`estadio`) REFERENCES `estadios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_partidos_grupo` FOREIGN KEY (`grupo_p`) REFERENCES `grupos` (`grupo`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla humanrightsaresecondary.partidos: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla humanrightsaresecondary.partidos: ~7 rows (aproximadamente)
 DELETE FROM `partidos`;
 /*!40000 ALTER TABLE `partidos` DISABLE KEYS */;
-INSERT INTO `partidos` (`id_partido`, `id_equipo1`, `id_equipo2`, `horario_juego`, `goles_equipo1`, `goles_equipo2`, `id_equipo_ganador`, `estado`, `grupo_p`) VALUES
-	(1, 12, 27, '2022-11-20 11:00:00', 2, 0, 12, 'Finalizado', 'A'),
-	(2, 12, 28, '2022-11-29 10:00:00', 0, 0, NULL, 'Inactivo', 'A'),
-	(3, 16, 19, '2022-11-29 14:00:00', 0, 0, NULL, 'Inactivo', 'B'),
-	(4, 18, 27, '2022-11-29 10:00:00', 0, 0, NULL, 'Inactivo', 'A'),
-	(5, 7, 29, '2022-11-28 10:00:00', 3, 3, NULL, 'Finalizado', 'G');
+INSERT INTO `partidos` (`id_partido`, `id_equipo1`, `id_equipo2`, `horario_juego`, `goles_equipo1`, `goles_equipo2`, `id_equipo_ganador`, `estado`, `grupo_p`, `estadio`) VALUES
+	(1, 12, 27, '2022-11-20 11:00:00', 2, 0, 12, 'Finalizado', 'A', 1),
+	(2, 12, 28, '2022-11-29 10:00:00', 0, 0, NULL, 'Inactivo', 'A', NULL),
+	(3, 16, 19, '2022-11-29 14:00:00', 0, 0, NULL, 'Inactivo', 'B', 6),
+	(4, 18, 27, '2022-11-29 10:00:00', 0, 0, NULL, 'Inactivo', 'A', NULL),
+	(5, 7, 29, '2022-11-28 10:00:00', 3, 3, NULL, 'Finalizado', 'G', NULL),
+	(6, 18, 12, '2022-11-25 10:00:00', 1, 1, NULL, 'Finalizado', 'A', NULL);
 /*!40000 ALTER TABLE `partidos` ENABLE KEYS */;
 
 -- Volcando estructura para tabla humanrightsaresecondary.usuarios
@@ -765,14 +795,14 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   KEY `Nombre` (`Nombre`),
   KEY `FK_usuarios_equipos` (`id_equipo_fav`),
   CONSTRAINT `FK_usuarios_equipos` FOREIGN KEY (`id_equipo_fav`) REFERENCES `equipos` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla humanrightsaresecondary.usuarios: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla humanrightsaresecondary.usuarios: ~3 rows (aproximadamente)
 DELETE FROM `usuarios`;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
 INSERT INTO `usuarios` (`id`, `Username`, `Password`, `Nombre`, `Email`, `Rank`, `id_equipo_fav`) VALUES
 	(34, 'RoyGCC', '12345', 'Roy', 'roycarrington20@gmail.com', 'user', 3),
-	(35, 'MiguelV', '1234', 'Miguel', 'roygcc2009@gmail.com', 'admin', 9);
+	(35, 'MiguelV', '1234', 'Miguel', 'roygcc2009@gmail.com', 'admin', 12);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
