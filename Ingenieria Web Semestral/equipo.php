@@ -34,7 +34,7 @@ if(!$_GET['equipoSeleccionado']){
             <?php
             include('config.php');
             $sql_query = "SELECT * FROM equipos WHERE id = '" . $_GET['equipoSeleccionado'] . "';";
-            $result = mysqli_query($conn_bd, $sql_query);
+            $result = mysqli_query($conn_BD, $sql_query);
             $row = $result->fetch_assoc();
             echo "
 
@@ -74,8 +74,8 @@ if(!$_GET['equipoSeleccionado']){
                 JOIN equipos b ON a.id_equipo = b.id
                 WHERE id_equipo = '" . $_GET['equipoSeleccionado'] . "';";
 
-                if ($conn_bd) {
-                        $result = mysqli_query($conn_bd, $sql_query);
+                if ($conn_BD) {
+                        $result = mysqli_query($conn_BD, $sql_query);
 
                         $equipos = mysqli_fetch_assoc($result);
 
@@ -92,7 +92,7 @@ if(!$_GET['equipoSeleccionado']){
                                 
                                     </div>";
                         }
-                        $conn_bd->close();
+                        $conn_BD->close();
                 }
 
             ?>

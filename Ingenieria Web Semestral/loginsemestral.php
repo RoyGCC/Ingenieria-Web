@@ -9,10 +9,10 @@ session_start();
     $arr['password'] = $_POST['password'];
 
     $query = "select id, rank from usuarios where username = '".$arr['username']."' && password = '".$arr['password']."'";
-    //$conn_bd = mysqli_connect('localhost', 'server', '12345', 'humanrightsaresecondary', 3306);
+    //$conn_BD = mysqli_connect('localhost', 'server', '12345', 'humanrightsaresecondary', 3306);
     
-    if($conn_bd){
-      $stm = mysqli_query($conn_bd, $query);
+    if($conn_BD){
+      $stm = mysqli_query($conn_BD, $query);
       $count = mysqli_num_rows($stm);
       if($count == 0) {
         echo "error";
