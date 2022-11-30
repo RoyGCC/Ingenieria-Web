@@ -1,4 +1,5 @@
 <?php
+include('config.php');
 include 'phpscripts.php';
 session_start();
 if (!empty($_SESSION['user'])) {
@@ -69,7 +70,6 @@ if(!$_GET['equipoSeleccionado']){
             <section class="secjugadores-selec inline-container">
 
             <?php
-            include('config.php');
                 $sql_query = "SELECT * FROM jugadores_equipo a
                 JOIN equipos b ON a.id_equipo = b.id
                 WHERE id_equipo = '" . $_GET['equipoSeleccionado'] . "';";
