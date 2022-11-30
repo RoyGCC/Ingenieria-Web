@@ -676,7 +676,7 @@
   text-align: center;
   color: white;
   width: calc(100%/4);
-  position: relative;
+  /*position: relative;*/
   left: 50%;
   transform: translate(-50%, -50%);
   bottom: 0;
@@ -768,7 +768,7 @@
   text-align: center;
   color: white;
   width: calc(100%/4);
-  position: relative;
+  /*position: relative;*/
   left: 50%;
   transform: translate(-50%, -50%);
   bottom: 0;
@@ -806,3 +806,4 @@
   width: 250px; 
   color: #fff;
 }
+
