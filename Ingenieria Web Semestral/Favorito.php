@@ -41,8 +41,8 @@ else{
                ON e.id = u.id_equipo_fav
                WHERE u.id =" . $_SESSION['user'] . "
                ;";
-          if ($conn_bd) {
-               $favorite_result = mysqli_query($conn_bd, $sql_query);
+          if ($conn_BD) {
+               $favorite_result = mysqli_query($conn_BD, $sql_query);
                
                while ($equipos = mysqli_fetch_assoc($favorite_result)) {
                     $fav_team_p = $equipos['id'];

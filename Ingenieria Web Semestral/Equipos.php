@@ -37,9 +37,9 @@ if (!empty($_SESSION['user'])) {
 
           <?php
           include('config.php');
-               $sql_query = "SELECT * FROM equipos ORDER BY grupo ASC;";
-          if ($conn_bd) {
-               $result = mysqli_query($conn_bd, $sql_query);
+          $sql_query = "SELECT * FROM equipos ORDER BY grupo ASC;";
+          if ($conn_BD) {
+               $result = mysqli_query($conn_BD, $sql_query);
                     while($equipos = mysqli_fetch_assoc($result)){
                          echo "<a class='equipocontainer' href='equipo.php?equipoSeleccionado=" . $equipos['id'] . "'>";
                          echo "<span>" . $equipos['grupo'] . "</span>";
@@ -49,7 +49,7 @@ if (!empty($_SESSION['user'])) {
                          echo "</div>";
                     }               
                }
-               $conn_bd->close();
+               $conn_BD->close();
           ?>
 
      </section>
