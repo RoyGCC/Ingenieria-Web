@@ -796,3 +796,36 @@
   border-radius: 1cqi;
 }
 
+/*Estilos de Tabla de Posición*/
+.flex_da_table{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+}
+
+
+
+.tablapos {
+  margin-block: 0px;
+  padding-inline: 0%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0px;
+  border-bottom: 1pt solid #00d9ff;
+  color: #fff;
+
+}
+
+.tablapos td {
+  width: 50px;
+  color: #fff;
+}
+
+.tablapos th {
+  width: 250px;
+  color: #fff;
+}
+
+
