@@ -602,82 +602,6 @@
 }
 
 
-.sec_partido h1{
-  padding: 10px;
-  margin: 10px;
-  color: white;
-}
-
-.marc_equipo{
-  display: flex;
-  align-items: center;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-.marc_equipo img{
-
-  margin: 10px;
-}
-
-.points_partido{
-  color: white;
-}
-
-.partido_detalles{
-  display: flex;
-  flex-direction: column;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* Estilos de Clasificación */
-
-
-.cont_partido{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-right: 50px;
-  padding-left: 50px;
-  margin: 5px;
-}
-
-.classification-content *h2{
-  font-size: 3cqi;
-}
-
-.classification-content *h3{
-  font-size: 2.5cqi;
-}
-
-.classification-content *h4{
-  font-size: 2cqi;
-}
-
-.classification-content *h5{
-  font-size: 1.5cqi;
-}
-
-.bracket-container{
-  width: 100vw;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  margin-top: 20px;
-}
-
 .bracket, .bracket2{
   width: 100%;
   height: 100%;
@@ -693,77 +617,9 @@
 
 .bracket > section *, .bracket2 > section *{
   justify-self: center;
-<<<<<<< Updated upstream
-=======
   text-align: center;
 }
 
-.match{
-  display: grid;
-  grid-template-columns: 1fr 0.2fr 1fr;
-  align-items: center;
-  width: 90%;
-  height: 4cqi;
-  background-color: white;
-  margin: 0.3cqi;
-  border-radius: 1.2cqi;
-}
-
-.match * {
-  font-size: 1cqi;
-}
-
-.match > div{
-  display: flex;
-  align-items: center;
-}
-
-.match h1{
-  margin: auto;
-}
-
-.bracket{
-  text-align: left;
-}
-
-.bracket2 *{
-  text-align: right;
-}
-
-.bracket .match{
-  padding-left: 0.5cqi;
-}
-
-.bracket2 .match{
-  padding-right: 0.5cqi;
-}
-
-
-.match img{
-  width: 2cqi;
-  -webkit-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.75); 
-  box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.75);
-}
-
-.bracket .match:nth-child(even){
-  background-color: #ffd2d2;
-}
-
-.bracket2 .match:nth-child(odd){
-  background-color: #ffd2d2;
-}
-
-.titulos-partidos{
-  margin-top: 30px;
-  color: white;
->>>>>>> Stashed changes
-  text-align: center;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
-}
-
-<<<<<<< Updated upstream
 .match{
   font-size: 14cqi;
   display: grid;
@@ -780,83 +636,6 @@
 }
 
 .match > div{
-=======
-.bronze{
-  text-align: center;
-  color: white;
-  width: calc(100%/4);
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  bottom: 0;
-}
-
-.bronze-container{
-  display: flex;
-  flex-direction: row;
-}
-
-.bronze .match{
-  width: 100%;
-  height: 3.8cqi;
-  margin: 0.7cqi;
-  border-radius: 1cqi;
-}
-
-.bracket > section > *{
-  justify-self: center;
-}
-
-.bracket .match:nth-child(even){
-  background-color: #ffd2d2;
-}
-
-.bracket2 .match:nth-child(odd),.bronze .match:nth-child(1){
-  background-color: #ffd2d2;
-}
-
-.titulos-partidos{
-  margin-top: 30px;
-  color: white;
-  text-align: center;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
-}
-
-.bronze{
-  text-align: center;
-  color: white;
-  width: calc(100%/4);
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, -100%);
-  bottom: 0;
-}
-
-.bronze-container{
-  display: flex;
-  flex-direction: row;
-}
-
-.bronze .match{
-  width: 100%;
-  height: 3.7cqi;
-  margin: 0.7cqi;
-  border-radius: 1cqi;
-}
-
-
-
-
-
-
-
-
-
-/*Estilos de Tabla de Posición*/
-.flex_da_table{
->>>>>>> Stashed changes
   display: flex;
   align-items: center;
 }
@@ -927,7 +706,6 @@
   border-radius: 1cqi;
 }
 
-<<<<<<< Updated upstream
 .classification-content *h2{
   font-size: 3cqi;
 }
@@ -1017,13 +795,3 @@
   margin: 0.7cqi;
   border-radius: 1cqi;
 }
-=======
-.tablapos th {
-  width: 250px;
-  color: #fff;
-}
-
-
-
-
->>>>>>> Stashed changes
