@@ -37,7 +37,7 @@ if (!empty($_SESSION['user'])) {
 
           <?php
           include('config.php');
-          $sql_query = "SELECT * FROM equipos ORDER BY grupo ASC;";
+          $sql_query = "SELECT * FROM equipos ORDER BY grupo ASC LIMIT 32;";
           if ($conn_BD) {
                $result = mysqli_query($conn_BD, $sql_query);
                     while($equipos = mysqli_fetch_assoc($result)){

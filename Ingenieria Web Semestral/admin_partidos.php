@@ -115,7 +115,7 @@ if ($_SESSION['myrank'] != "admin") {
                     $sql_query_played = "SELECT * 
                               FROM partidos p LEFT JOIN equipos e 
                               ON  p.id_equipo1 = e.id && p.id_equipo2 = e.id && p.id_equipo_ganador = e.id
-                              WHERE p.estado != 'Finalizado' 
+                              WHERE  
                               AND p.horario_juego >= '" . $_GET['fecha_Selected'] . " 00:00:00' 
                               AND p.horario_juego <= '" . $_GET['fecha_Selected'] . " 23:59:59'
                               AND (p.id_equipo1 = '" . $_GET['equipoSelect'] . "' 
@@ -126,8 +126,8 @@ if ($_SESSION['myrank'] != "admin") {
                   $sql_query_played = "SELECT * 
                               FROM partidos p LEFT JOIN equipos e 
                               ON  p.id_equipo1 = e.id && p.id_equipo2 = e.id && p.id_equipo_ganador = e.id
-                              WHERE p.estado != 'Finalizado' 
-                              AND p.horario_juego >= '" . $_GET['fecha_Selected'] . " 00:00:00' 
+                              WHERE 
+                              p.horario_juego >= '" . $_GET['fecha_Selected'] . " 00:00:00' 
                               AND p.horario_juego <= '" . $_GET['fecha_Selected'] . " 23:59:59'
                               ORDER BY p.horario_juego ASC;";
                }
@@ -135,7 +135,7 @@ if ($_SESSION['myrank'] != "admin") {
                     $sql_query_played = "SELECT * 
                               FROM partidos p LEFT JOIN equipos e 
                               ON  p.id_equipo1 = e.id && p.id_equipo2 = e.id && p.id_equipo_ganador = e.id
-                              WHERE p.estado != 'Finalizado' AND (p.id_equipo1 = '".$_GET['equipoSelect']. "' OR p.id_equipo2 = '" . $_GET['equipoSelect'] . "')
+                              WHERE (p.id_equipo1 = '".$_GET['equipoSelect']. "' OR p.id_equipo2 = '" . $_GET['equipoSelect'] . "')
                               ORDER BY p.horario_juego ASC;";
                }
           } 
@@ -143,7 +143,6 @@ if ($_SESSION['myrank'] != "admin") {
                $sql_query_played = "SELECT * 
                               FROM partidos p LEFT JOIN equipos e 
                               ON  p.id_equipo1 = e.id && p.id_equipo2 = e.id && p.id_equipo_ganador = e.id
-                              WHERE p.estado != 'Finalizado'
                               ORDER BY p.horario_juego ASC;";
           }
           admin_display_matches($sql_query_played);

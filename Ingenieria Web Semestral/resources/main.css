@@ -605,15 +605,16 @@
 }
 
 .bronze {
-    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.bronze section{
+.bronze h2{
+  color: white;
+}
+.bronzei {
   display: flex;
 }
-
 
 .bracket>section{
   display: flex;
@@ -627,6 +628,17 @@
   background-color: white;
   border-radius: 8cqi;
   margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 6px;
+}
+
+.match img{
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
 }
 
 .bracket .match:nth-child(even) {
