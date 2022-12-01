@@ -12,20 +12,26 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
           $_POST['j_empatados'] = 'j_empatados';}
      if ($_POST['j_perdidos'] == null) {
           $_POST['j_perdidos'] = 'j_perdidos';}
+     if ($_POST['goles_favor'] == null) {
+          $_POST['goles_favor'] = 'goles_favor';}
+     if ($_POST['goles_contra'] == null) {
+          $_POST['goles_contra'] = 'goles_contra';}
+     if ($_POST['goles_dif'] == null) {
+          $_POST['goles_dif'] = 'goles_dif';}
      if($conn_BD){
      /*$Total_Games = $_POST['j_ganados'] + $_POST['j_empatados'] + $_POST['j_perdidos'];*/
      
 
      $query = "UPDATE equipos 
-               SET  j_ganados = ". $_POST['j_ganados'].", j_empatados = ". $_POST['j_empatados'].", j_perdidos = ". $_POST['j_perdidos']."
+               SET  j_ganados = ". $_POST['j_ganados'].", j_empatados = ". $_POST['j_empatados'].", j_perdidos = ". $_POST['j_perdidos'].", goles_favor = ". $_POST['goles_favor'].", goles_contra = ". $_POST['goles_contra']."
                WHERE id = " . $_POST['equipoSelect'].";";
 
      mysqli_query($conn_BD,$query);
      $query_jjugados = "UPDATE equipos 
-                        SET j_jugados = j_ganados+j_perdidos+j_empatados, puntos = (j_ganados*3)+j_empatados 
+                        SET j_jugados = j_ganados+j_perdidos+j_empatados, puntos = (j_ganados*3)+j_empatados, goles_dif = goles_favor-goles_contra
                         WHERE id =".$_POST['equipoSelect'].";";
      mysqli_query($conn_BD,$query_jjugados);
-     header("Location:Home.php");
+     header("Location:admin.php");
      }
 }
 ?>
@@ -62,6 +68,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                     <input type="number" placeholder="Partidos Empatados" name="j_empatados" id="j_empatados">
                     <label for="j_perdidos">Partidos Perdidos</label>
                     <input type="number" placeholder="Partidos Perdidos" name="j_perdidos" id="j_perdidos">
+                    <label for="goles_favor">Goles a Favor</label>
+                    <input type="number" placeholder="Goles a Favor" name="goles_favor" id="goles_favor">
+                    <label for="goles_contra">Goles en Contra</label>
+                    <input type="number" placeholder="Goles en Contra" name="goles_contra" id="goles_contra">
                     <input type="submit" value="Ingresar">
                </form>
                </div>

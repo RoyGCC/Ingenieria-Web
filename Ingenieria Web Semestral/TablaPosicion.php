@@ -26,7 +26,7 @@ if (!empty($_SESSION['user'])) {
 
                <?php
                include('config.php');
-               $sql_query = "SELECT * FROM equipos WHERE grupo = 'A' ORDER BY puntos ASC;";
+               $sql_query = "SELECT * FROM equipos WHERE grupo = 'A' ORDER BY puntos DESC;";
                $result = mysqli_query($conn_BD, $sql_query);
                $row = $result->fetch_assoc();
 
@@ -38,22 +38,26 @@ if (!empty($_SESSION['user'])) {
           <table class='tablapos'>
                <tr>
                     <th><h1>" . $equipos['equipo'] . "</h1></th>
-                    <td></td>
                     <td><h3>Pts</h3></td>
                     <td><h3>PJ</h3></td>
                     <td><h3>G</h3></td>
                     <td><h3>E</h3></td>
                     <td><h3>P</h3></td>
+                    <td><h3>GF</h3></td>
+                    <td><h3>GC</h3></td>
+                    <td><h3>GD</h3></td>
                </tr>
 
                <tr>
                     <td style='text-align: center;'><img style='width: 50px; height: 25px;' src='./resources/img/Banderas/" . $equipos['dir_bandera'] . "'></td>
-                    <td></td>
                     <td>" . $equipos['puntos'] . "</td>
                     <td>" . $equipos['j_jugados'] . "</td>
                     <td>" . $equipos['j_ganados'] . "</td>
                     <td>" . $equipos['j_empatados'] . "</td>
                     <td>" . $equipos['j_perdidos'] . "</td>
+                    <td>" . $equipos['goles_favor'] . "</td>
+                    <td>" . $equipos['goles_contra'] . "</td>
+                    <td>" . $equipos['goles_dif'] . "</td>
                </tr>
           </table>
           <div>
@@ -70,7 +74,7 @@ if (!empty($_SESSION['user'])) {
 
                <?php
                include('config.php');
-               $sql_query = "SELECT * FROM equipos WHERE grupo = 'B' ORDER BY puntos ASC;";
+               $sql_query = "SELECT * FROM equipos WHERE grupo = 'B' ORDER BY puntos DESC;";
                $result = mysqli_query($conn_BD, $sql_query);
                $row = $result->fetch_assoc();
 
@@ -82,22 +86,26 @@ if (!empty($_SESSION['user'])) {
                <table class='tablapos'>
                     <tr>
                          <th><h1>" . $equipos['equipo'] . "</h1></th>
-                         <td></td>
                          <td><h3>Pts</h3></td>
                          <td><h3>PJ</h3></td>
                          <td><h3>G</h3></td>
                          <td><h3>E</h3></td>
                          <td><h3>P</h3></td>
+                         <td><h3>GF</h3></td>
+                         <td><h3>GC</h3></td>
+                         <td><h3>GD</h3></td>
                     </tr>
      
                     <tr>
                          <td style='text-align: center;'><img style='width: 50px; height: 25px;' src='./resources/img/Banderas/" . $equipos['dir_bandera'] . "'></td>
-                         <td></td>
                          <td>" . $equipos['puntos'] . "</td>
                          <td>" . $equipos['j_jugados'] . "</td>
                          <td>" . $equipos['j_ganados'] . "</td>
                          <td>" . $equipos['j_empatados'] . "</td>
                          <td>" . $equipos['j_perdidos'] . "</td>
+                         <td>" . $equipos['goles_favor'] . "</td>
+                         <td>" . $equipos['goles_contra'] . "</td>
+                         <td>" . $equipos['goles_dif'] . "</td>
                     </tr>
                </table>
                <div>
@@ -114,7 +122,7 @@ if (!empty($_SESSION['user'])) {
 
                <?php
                include('config.php');
-               $sql_query = "SELECT * FROM equipos WHERE grupo = 'C' ORDER BY puntos ASC;";
+               $sql_query = "SELECT * FROM equipos WHERE grupo = 'C' ORDER BY puntos DESC;";
                $result = mysqli_query($conn_BD, $sql_query);
                $row = $result->fetch_assoc();
 
@@ -126,22 +134,26 @@ if (!empty($_SESSION['user'])) {
                <table class='tablapos'>
                     <tr>
                          <th><h1>" . $equipos['equipo'] . "</h1></th>
-                         <td></td>
                          <td><h3>Pts</h3></td>
                          <td><h3>PJ</h3></td>
                          <td><h3>G</h3></td>
                          <td><h3>E</h3></td>
                          <td><h3>P</h3></td>
+                         <td><h3>GF</h3></td>
+                         <td><h3>GC</h3></td>
+                         <td><h3>GD</h3></td>
                     </tr>
      
                     <tr>
                          <td style='text-align: center;'><img style='width: 50px; height: 25px;' src='./resources/img/Banderas/" . $equipos['dir_bandera'] . "'></td>
-                         <td></td>
                          <td>" . $equipos['puntos'] . "</td>
                          <td>" . $equipos['j_jugados'] . "</td>
                          <td>" . $equipos['j_ganados'] . "</td>
                          <td>" . $equipos['j_empatados'] . "</td>
                          <td>" . $equipos['j_perdidos'] . "</td>
+                         <td>" . $equipos['goles_favor'] . "</td>
+                         <td>" . $equipos['goles_contra'] . "</td>
+                         <td>" . $equipos['goles_dif'] . "</td>
                     </tr>
                </table>
                <div>
@@ -158,7 +170,7 @@ if (!empty($_SESSION['user'])) {
 
                <?php
                include('config.php');
-               $sql_query = "SELECT * FROM equipos WHERE grupo = 'D' ORDER BY puntos ASC;";
+               $sql_query = "SELECT * FROM equipos WHERE grupo = 'D' ORDER BY puntos DESC;";
                $result = mysqli_query($conn_BD, $sql_query);
                $row = $result->fetch_assoc();
 
@@ -170,22 +182,26 @@ if (!empty($_SESSION['user'])) {
                <table class='tablapos'>
                     <tr>
                          <th><h1>" . $equipos['equipo'] . "</h1></th>
-                         <td></td>
                          <td><h3>Pts</h3></td>
                          <td><h3>PJ</h3></td>
                          <td><h3>G</h3></td>
                          <td><h3>E</h3></td>
                          <td><h3>P</h3></td>
+                         <td><h3>GF</h3></td>
+                         <td><h3>GC</h3></td>
+                         <td><h3>GD</h3></td>
                     </tr>
      
                     <tr>
                          <td style='text-align: center;'><img style='width: 50px; height: 25px;' src='./resources/img/Banderas/" . $equipos['dir_bandera'] . "'></td>
-                         <td></td>
                          <td>" . $equipos['puntos'] . "</td>
                          <td>" . $equipos['j_jugados'] . "</td>
                          <td>" . $equipos['j_ganados'] . "</td>
                          <td>" . $equipos['j_empatados'] . "</td>
                          <td>" . $equipos['j_perdidos'] . "</td>
+                         <td>" . $equipos['goles_favor'] . "</td>
+                         <td>" . $equipos['goles_contra'] . "</td>
+                         <td>" . $equipos['goles_dif'] . "</td>
                     </tr>
                </table>
                <div>
@@ -202,7 +218,7 @@ if (!empty($_SESSION['user'])) {
 
                <?php
                include('config.php');
-               $sql_query = "SELECT * FROM equipos WHERE grupo = 'E' ORDER BY puntos ASC;";
+               $sql_query = "SELECT * FROM equipos WHERE grupo = 'E' ORDER BY puntos DESC;";
                $result = mysqli_query($conn_BD, $sql_query);
                $row = $result->fetch_assoc();
 
@@ -214,22 +230,26 @@ if (!empty($_SESSION['user'])) {
                <table class='tablapos'>
                     <tr>
                          <th><h1>" . $equipos['equipo'] . "</h1></th>
-                         <td></td>
                          <td><h3>Pts</h3></td>
                          <td><h3>PJ</h3></td>
                          <td><h3>G</h3></td>
                          <td><h3>E</h3></td>
                          <td><h3>P</h3></td>
+                         <td><h3>GF</h3></td>
+                         <td><h3>GC</h3></td>
+                         <td><h3>GD</h3></td>
                     </tr>
      
                     <tr>
                          <td style='text-align: center;'><img style='width: 50px; height: 25px;' src='./resources/img/Banderas/" . $equipos['dir_bandera'] . "'></td>
-                         <td></td>
                          <td>" . $equipos['puntos'] . "</td>
                          <td>" . $equipos['j_jugados'] . "</td>
                          <td>" . $equipos['j_ganados'] . "</td>
                          <td>" . $equipos['j_empatados'] . "</td>
                          <td>" . $equipos['j_perdidos'] . "</td>
+                         <td>" . $equipos['goles_favor'] . "</td>
+                         <td>" . $equipos['goles_contra'] . "</td>
+                         <td>" . $equipos['goles_dif'] . "</td>
                     </tr>
                </table>
                <div>
@@ -246,7 +266,7 @@ if (!empty($_SESSION['user'])) {
 
                <?php
                include('config.php');
-               $sql_query = "SELECT * FROM equipos WHERE grupo = 'F' ORDER BY puntos ASC;";
+               $sql_query = "SELECT * FROM equipos WHERE grupo = 'F' ORDER BY puntos DESC;";
                $result = mysqli_query($conn_BD, $sql_query);
                $row = $result->fetch_assoc();
 
@@ -258,22 +278,26 @@ if (!empty($_SESSION['user'])) {
                <table class='tablapos'>
                     <tr>
                          <th><h1>" . $equipos['equipo'] . "</h1></th>
-                         <td></td>
                          <td><h3>Pts</h3></td>
                          <td><h3>PJ</h3></td>
                          <td><h3>G</h3></td>
                          <td><h3>E</h3></td>
                          <td><h3>P</h3></td>
+                         <td><h3>GF</h3></td>
+                         <td><h3>GC</h3></td>
+                         <td><h3>GD</h3></td>
                     </tr>
      
                     <tr>
                          <td style='text-align: center;'><img style='width: 50px; height: 25px;' src='./resources/img/Banderas/" . $equipos['dir_bandera'] . "'></td>
-                         <td></td>
                          <td>" . $equipos['puntos'] . "</td>
                          <td>" . $equipos['j_jugados'] . "</td>
                          <td>" . $equipos['j_ganados'] . "</td>
                          <td>" . $equipos['j_empatados'] . "</td>
                          <td>" . $equipos['j_perdidos'] . "</td>
+                         <td>" . $equipos['goles_favor'] . "</td>
+                         <td>" . $equipos['goles_contra'] . "</td>
+                         <td>" . $equipos['goles_dif'] . "</td>
                     </tr>
                </table>
                <div>
@@ -290,7 +314,7 @@ if (!empty($_SESSION['user'])) {
 
                <?php
                include('config.php');
-               $sql_query = "SELECT * FROM equipos WHERE grupo = 'G' ORDER BY puntos ASC;";
+               $sql_query = "SELECT * FROM equipos WHERE grupo = 'G' ORDER BY puntos DESC;";
                $result = mysqli_query($conn_BD, $sql_query);
                $row = $result->fetch_assoc();
 
@@ -302,22 +326,26 @@ if (!empty($_SESSION['user'])) {
                <table class='tablapos'>
                     <tr>
                          <th><h1>" . $equipos['equipo'] . "</h1></th>
-                         <td></td>
                          <td><h3>Pts</h3></td>
                          <td><h3>PJ</h3></td>
                          <td><h3>G</h3></td>
                          <td><h3>E</h3></td>
                          <td><h3>P</h3></td>
+                         <td><h3>GF</h3></td>
+                         <td><h3>GC</h3></td>
+                         <td><h3>GD</h3></td>
                     </tr>
      
                     <tr>
                          <td style='text-align: center;'><img style='width: 50px; height: 25px;' src='./resources/img/Banderas/" . $equipos['dir_bandera'] . "'></td>
-                         <td></td>
                          <td>" . $equipos['puntos'] . "</td>
                          <td>" . $equipos['j_jugados'] . "</td>
                          <td>" . $equipos['j_ganados'] . "</td>
                          <td>" . $equipos['j_empatados'] . "</td>
                          <td>" . $equipos['j_perdidos'] . "</td>
+                         <td>" . $equipos['goles_favor'] . "</td>
+                         <td>" . $equipos['goles_contra'] . "</td>
+                         <td>" . $equipos['goles_dif'] . "</td>
                     </tr>
                </table>
                <div>
@@ -334,7 +362,7 @@ if (!empty($_SESSION['user'])) {
 
                <?php
                include('config.php');
-               $sql_query = "SELECT * FROM equipos WHERE grupo = 'H' ORDER BY puntos ASC;";
+               $sql_query = "SELECT * FROM equipos WHERE grupo = 'H' ORDER BY puntos DESC;";
                $result = mysqli_query($conn_BD, $sql_query);
                $row = $result->fetch_assoc();
 
@@ -346,22 +374,26 @@ if (!empty($_SESSION['user'])) {
                <table class='tablapos'>
                     <tr>
                          <th><h1>" . $equipos['equipo'] . "</h1></th>
-                         <td></td>
                          <td><h3>Pts</h3></td>
                          <td><h3>PJ</h3></td>
                          <td><h3>G</h3></td>
                          <td><h3>E</h3></td>
                          <td><h3>P</h3></td>
+                         <td><h3>GF</h3></td>
+                         <td><h3>GC</h3></td>
+                         <td><h3>GD</h3></td>
                     </tr>
      
                     <tr>
                          <td style='text-align: center;'><img style='width: 50px; height: 25px;' src='./resources/img/Banderas/" . $equipos['dir_bandera'] . "'></td>
-                         <td></td>
                          <td>" . $equipos['puntos'] . "</td>
                          <td>" . $equipos['j_jugados'] . "</td>
                          <td>" . $equipos['j_ganados'] . "</td>
                          <td>" . $equipos['j_empatados'] . "</td>
                          <td>" . $equipos['j_perdidos'] . "</td>
+                         <td>" . $equipos['goles_favor'] . "</td>
+                         <td>" . $equipos['goles_contra'] . "</td>
+                         <td>" . $equipos['goles_dif'] . "</td>
                     </tr>
                </table>
                <div>
