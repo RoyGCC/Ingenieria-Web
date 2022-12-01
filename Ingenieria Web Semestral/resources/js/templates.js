@@ -39,7 +39,7 @@ function headerTemplateAdminLogged() {
                     <h1 style = "font-family: var(--fuente_Header) ;">\
                     <ul class="dpm">\
                     <li>\
-                    <a style="text-decoration: none;color: #7f1947;">Mas opciones▾</a>\
+                    <a style="text-decoration: none;color: #7f1947;margin-right:50px;">Menu   ▾</a>\
                     <ul class="dropdown">\
                         <li><a style="text-decoration: none;color: #7f1947;" href="admin.php">Admin</a></li>\
                         <li><a style="text-decoration: none;color: #7f1947;" href="logout.php">Cerrar Sesion</a></li>\

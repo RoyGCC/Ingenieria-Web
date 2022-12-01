@@ -697,7 +697,7 @@ ul li ul.dropdown li {
   background: #ffffff;
   position: absolute;
   z-index: 999;
-  display: none;
+  display: flex;
   border-radius: 5px;
   }
   .dpm ul li a:hover {
