@@ -22,8 +22,8 @@
 }
 
 .general_backgroundImage {
-  background-image: url("img/Fondo4.png");
-  background-size: cover;
+  background-image: url("img/Fondo5.png");
+  background-size: auto;
 }
 
 .secequipos {
@@ -546,27 +546,32 @@
   padding-right: 50px;
   padding-left: 50px;
   margin: 5px;
+  border-radius: 10px;
+  font-family: sans-serif;
 }
 
 .partido_equipos{
   display: flex;
   align-items: center;
-  background-image: url("img/Fondo4.png");
+  background-image: url("img/Fondo5.png");
   background-size:cover;
   margin: 5px;
   padding: 5px;
+  border-radius: 10px;
 }
 
 .sec_partido{
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: sans-serif;
 }
 
 .sec_partido h1{
   padding: 10px;
   margin: 10px;
   color: white;
+  font-family: sans-serif;
 }
 
 .marc_equipo{
@@ -640,7 +645,10 @@
   justify-content: center;
   align-items: baseline;
 }
-
+.tablaspace{
+  background-color: rgb(53, 53, 53);
+  border-radius: 20px;
+}
 
 
 .tablapos {
@@ -664,3 +672,36 @@
   width: 250px;
   color: #fff;
 }
+
+.res{
+  display: flex;
+  border-radius: 10px;
+  background-color: #fFF;
+  margin-top: 20px;
+  width: 400px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  font-family: sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+ul li ul.dropdown li {
+  display: block;
+  }
+  ul li ul.dropdown {
+  width: 100%;
+  background: #ffffff;
+  position: absolute;
+  z-index: 999;
+  display: none;
+  }
+  .dpm ul li a:hover {
+  background: #c52525;
+  }
+  ul li:hover ul.dropdown {
+  display: block;
+  }

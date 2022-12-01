@@ -20,11 +20,12 @@ if (!empty($_SESSION['user'])) {
 
 <body class="general_backgroundImage">
      <div id="general_header"></div>
+     <section class="res">
      <form action="" method="get">
           <label for="fecha_Selected">Busqueda por día</label>
           <input type="date" name="fecha_Selected">
           <input type="submit" value="buscar por fecha">
-          
+     </section>
      </form>
      <?php
           if (!empty($_GET['fecha_Selected'])) {

@@ -37,8 +37,15 @@ function headerTemplateAdminLogged() {
     document.getElementById("general_header").innerHTML = '<header class="header-home inline-container">\
                     <a href="Home.php"><img src="resources/img/Logo.png" alt="IconSoloCiencia"></a>\
                     <h1 style = "font-family: var(--fuente_Header) ;">\
-                    <a href="admin_opt.php" style="text-decoration: none;color: #7f1947;">Admin</a>\
-                    <a href="logout.php" style="text-decoration: none;color: #7f1947;">Cerrar sesion</a>\
+                    <ul class>\
+                    <li>\
+                    <a style="text-decoration: none;color: #7f1947;">Mas opciones▾</a>\
+                    <ul class="dropdown">\
+                        <li><a style="text-decoration: none;color: #7f1947;" href="admin.php">Admin</a></li>\
+                        <li><a style="text-decoration: none;color: #7f1947;" href="logout.php">Cerrar Sesion</a></li>\
+                    </ul>\
+                    </li>\
+                    </ul>\
                     </h1></header>\
                     <nav class="navbar-home inline-container">\
                         <ul style = "font-family: var(--fuente_titulos);">\
