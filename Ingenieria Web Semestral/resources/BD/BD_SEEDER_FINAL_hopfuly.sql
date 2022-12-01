@@ -27,6 +27,9 @@ CREATE TABLE IF NOT EXISTS `equipos` (
   `j_ganados` int(11) NOT NULL DEFAULT 0,
   `j_empatados` int(11) NOT NULL DEFAULT 0,
   `j_perdidos` int(11) NOT NULL DEFAULT 0,
+  `goles_favor` int(11) NOT NULL,
+  `goles_contra` int(11) NOT NULL,
+  `goles_dif` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `GRUPO` (`grupo`),
   CONSTRAINT `fK_equipos_grupo` FOREIGN KEY (`grupo`) REFERENCES `grupos` (`grupo`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -35,39 +38,39 @@ CREATE TABLE IF NOT EXISTS `equipos` (
 -- Volcando datos para la tabla humanrightsaresecondary.equipos: ~32 rows (aproximadamente)
 DELETE FROM `equipos`;
 /*!40000 ALTER TABLE `equipos` DISABLE KEYS */;
-INSERT INTO `equipos` (`id`, `equipo`, `grupo`, `dir_bandera`, `puntos`, `j_jugados`, `j_ganados`, `j_empatados`, `j_perdidos`) VALUES
-	(1, 'Brazil', 'G', 'Brasil.webp', 0, 0, 0, 0, 0),
-	(2, 'Alemania', 'E', 'Alemania.webp', 0, 0, 0, 0, 0),
-	(3, 'Arabia Saudi', 'C', 'ArabiaSaudita.png', 0, 0, 0, 0, 0),
-	(4, 'Argentina', 'C', 'Argentina.webp', 0, 0, 0, 0, 0),
-	(5, 'Australia', 'D', 'Australia.webp', 0, 0, 0, 0, 0),
-	(6, 'Belgica', 'F', 'Belgica.png', 0, 0, 0, 0, 0),
-	(7, 'Camerun', 'G', 'Camerun.png', 0, 0, 0, 0, 0),
-	(8, 'Canada', 'F', 'Canada.jpg', 0, 0, 0, 0, 0),
-	(9, 'Costa Rica', 'E', 'CostaRica.jpg', 0, 0, 0, 0, 0),
-	(10, 'Croacia', 'F', 'Croacia.svg', 0, 0, 0, 0, 0),
-	(11, 'Dinamarca', 'D', 'Dinamarca.png', 0, 0, 0, 0, 0),
-	(12, 'Ecuador', 'A', 'Ecuador.svg', 0, 0, 0, 0, 0),
-	(13, 'España', 'E', 'España.webp', 0, 0, 0, 0, 0),
-	(14, 'USA', 'B', 'EstadosUnidos.webp', 0, 0, 0, 0, 0),
-	(15, 'Francia', 'D', 'Francia.svg', 0, 0, 0, 0, 0),
-	(16, 'Gales', 'B', 'Gales.png', 0, 0, 0, 0, 0),
-	(17, 'Ghana', 'H', 'Ghana.png', 0, 0, 0, 0, 0),
-	(18, 'Paises Bajos', 'A', 'PaisesBajosNoEsSoloHolanda.png', 0, 0, 0, 0, 0),
-	(19, 'Inglaterra', 'B', 'Inglaterra.jpg', 0, 0, 0, 0, 0),
-	(20, 'Iran', 'B', 'AIranNoIran.png', 0, 0, 0, 0, 0),
-	(21, 'Japon', 'E', 'Japon.svg', 0, 0, 0, 0, 0),
-	(22, 'Corea del Sur', 'H', 'Korea.webp', 0, 0, 0, 0, 0),
-	(23, 'Marruecos', 'F', 'Marruecos.png', 0, 0, 0, 0, 0),
-	(24, 'Mexico', 'C', 'Mexico.png', 0, 0, 0, 0, 0),
-	(25, 'Polonia', 'C', 'Polonia.jpg', 0, 0, 0, 0, 0),
-	(26, 'Portugal', 'H', 'Portugal.webp', 0, 0, 0, 0, 0),
-	(27, 'Qatar', 'A', 'Qatar.webp', 0, 0, 0, 0, 0),
-	(28, 'Senegal', 'A', 'Senegal.svg', 0, 0, 0, 0, 0),
-	(29, 'Serbia', 'G', 'Serbia.png', 0, 0, 0, 0, 0),
-	(30, 'Suiza', 'G', 'Suiza.jpg', 0, 0, 0, 0, 0),
-	(31, 'Tunez', 'D', 'Tunez.png', 0, 0, 0, 0, 0),
-	(32, 'Uruguay', 'H', 'Uruguay.webp', 0, 0, 0, 0, 0);
+INSERT INTO `equipos` (`id`, `equipo`, `grupo`, `dir_bandera`, `puntos`, `j_jugados`, `j_ganados`, `j_empatados`, `j_perdidos`, `goles_favor`, `goles_contra`, `goles_dif`) VALUES
+	(1, 'Brazil', 'G', 'Brasil.webp', 0, 0, 0, 0, 0, 0, 0, 0),
+	(2, 'Alemania', 'E', 'Alemania.webp', 0, 0, 0, 0, 0, 0, 0, 0),
+	(3, 'Arabia Saudi', 'C', 'ArabiaSaudita.png', 3, 3, 1, 0, 2, 3, 5, -2),
+	(4, 'Argentina', 'C', 'Argentina.webp', 6, 3, 2, 0, 1, 5, 2, 3),
+	(5, 'Australia', 'D', 'Australia.webp', 6, 3, 2, 0, 1, 3, 4, -1),
+	(6, 'Belgica', 'F', 'Belgica.png', 0, 0, 0, 0, 0, 0, 0, 0),
+	(7, 'Camerun', 'G', 'Camerun.png', 0, 0, 0, 0, 0, 0, 0, 0),
+	(8, 'Canada', 'F', 'Canada.jpg', 0, 0, 0, 0, 0, 0, 0, 0),
+	(9, 'Costa Rica', 'E', 'CostaRica.jpg', 0, 0, 0, 0, 0, 0, 0, 0),
+	(10, 'Croacia', 'F', 'Croacia.svg', 0, 0, 0, 0, 0, 0, 0, 0),
+	(11, 'Dinamarca', 'D', 'Dinamarca.png', 1, 3, 0, 1, 2, 1, 3, -2),
+	(12, 'Ecuador', 'A', 'Ecuador.svg', 4, 3, 1, 1, 1, 4, 3, 1),
+	(13, 'España', 'E', 'España.webp', 0, 0, 0, 0, 0, 0, 0, 0),
+	(14, 'USA', 'B', 'EstadosUnidos.webp', 5, 3, 1, 2, 0, 2, 1, 1),
+	(15, 'Francia', 'D', 'Francia.svg', 6, 3, 2, 0, 1, 6, 3, 3),
+	(16, 'Gales', 'B', 'Gales.png', 1, 3, 0, 1, 2, 1, 6, -5),
+	(17, 'Ghana', 'H', 'Ghana.png', 0, 0, 0, 0, 0, 0, 0, 0),
+	(18, 'Paises Bajos', 'A', 'PaisesBajosNoEsSoloHolanda.png', 7, 4, 2, 1, 1, 5, 1, 4),
+	(19, 'Inglaterra', 'B', 'Inglaterra.jpg', 7, 3, 2, 1, 0, 9, 2, 7),
+	(20, 'Iran', 'B', 'AIranNoIran.png', 3, 3, 1, 0, 2, 4, 7, -3),
+	(21, 'Japon', 'E', 'Japon.svg', 0, 0, 0, 0, 0, 0, 0, 0),
+	(22, 'Corea del Sur', 'H', 'Korea.webp', 0, 0, 0, 0, 0, 0, 0, 0),
+	(23, 'Marruecos', 'F', 'Marruecos.png', 0, 0, 0, 0, 0, 0, 0, 0),
+	(24, 'Mexico', 'C', 'Mexico.png', 4, 3, 1, 1, 1, 2, 3, -1),
+	(25, 'Polonia', 'C', 'Polonia.jpg', 4, 3, 1, 1, 1, 2, 2, 0),
+	(26, 'Portugal', 'H', 'Portugal.webp', 0, 0, 0, 0, 0, 0, 0, 0),
+	(27, 'Qatar', 'A', 'Qatar.webp', 0, 3, 0, 0, 3, 1, 7, -6),
+	(28, 'Senegal', 'A', 'Senegal.svg', 6, 3, 2, 0, 1, 5, 4, 1),
+	(29, 'Serbia', 'G', 'Serbia.png', 0, 0, 0, 0, 0, 0, 0, 0),
+	(30, 'Suiza', 'G', 'Suiza.jpg', 0, 0, 0, 0, 0, 0, 0, 0),
+	(31, 'Tunez', 'D', 'Tunez.png', 4, 3, 1, 1, 1, 1, 1, 0),
+	(32, 'Uruguay', 'H', 'Uruguay.webp', 0, 0, 0, 0, 0, 0, 0, 0);
 /*!40000 ALTER TABLE `equipos` ENABLE KEYS */;
 
 -- Volcando estructura para tabla humanrightsaresecondary.estadios
@@ -97,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `grupos` (
   PRIMARY KEY (`grupo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla humanrightsaresecondary.grupos: ~12 rows (aproximadamente)
+-- Volcando datos para la tabla humanrightsaresecondary.grupos: ~13 rows (aproximadamente)
 DELETE FROM `grupos`;
 /*!40000 ALTER TABLE `grupos` DISABLE KEYS */;
 INSERT INTO `grupos` (`grupo`) VALUES
@@ -127,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `jugadores_equipo` (
   CONSTRAINT `FK__equipos` FOREIGN KEY (`id_equipo`) REFERENCES `equipos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=609 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla humanrightsaresecondary.jugadores_equipo: ~607 rows (aproximadamente)
+-- Volcando datos para la tabla humanrightsaresecondary.jugadores_equipo: ~608 rows (aproximadamente)
 DELETE FROM `jugadores_equipo`;
 /*!40000 ALTER TABLE `jugadores_equipo` DISABLE KEYS */;
 INSERT INTO `jugadores_equipo` (`id_jugador`, `id_equipo`, `nombre`, `marco_dir`) VALUES
@@ -752,7 +755,7 @@ CREATE TABLE IF NOT EXISTS `partidos` (
   `id_equipo_ganador` int(11) DEFAULT NULL,
   `estado` varchar(30) NOT NULL DEFAULT 'Inactivo',
   `grupo_p` char(1) NOT NULL,
-  `estadio` int(11) NOT NULL,
+  `estadio` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_partido`),
   KEY `FK_partidos_equipos` (`id_equipo1`),
   KEY `FK_partidos_equipos_2` (`id_equipo2`),
@@ -764,33 +767,58 @@ CREATE TABLE IF NOT EXISTS `partidos` (
   CONSTRAINT `FK_partidos_equipos_3` FOREIGN KEY (`id_equipo_ganador`) REFERENCES `equipos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_partidos_estadio` FOREIGN KEY (`estadio`) REFERENCES `estadios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_partidos_grupo` FOREIGN KEY (`grupo_p`) REFERENCES `grupos` (`grupo`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla humanrightsaresecondary.partidos: ~7 rows (aproximadamente)
+-- Volcando datos para la tabla humanrightsaresecondary.partidos: ~0 rows (aproximadamente)
 DELETE FROM `partidos`;
 /*!40000 ALTER TABLE `partidos` DISABLE KEYS */;
 INSERT INTO `partidos` (`id_partido`, `id_equipo1`, `id_equipo2`, `horario_juego`, `goles_equipo1`, `goles_equipo2`, `id_equipo_ganador`, `estado`, `grupo_p`, `estadio`) VALUES
-	(5, 7, 29, '2022-11-28 10:00:00', 3, 3, NULL, 'Finalizado', 'G', 5),
-	(6, 18, 12, '2022-11-25 10:00:00', 1, 1, NULL, 'Finalizado', 'A', 3),
-	(11, 19, 16, '2022-11-11 20:24:00', 2, 1, NULL, 'En Curso', '1', 4),
-	(12, 12, 16, '2022-11-30 10:00:00', 0, 0, NULL, 'Inactivo', '8', 4),
-	(13, 12, 12, '2022-11-23 20:15:00', 0, 0, NULL, 'Inactivo', '3', 1),
-	(14, 12, 12, '2022-11-03 19:21:00', 0, 0, NULL, 'Inactivo', '1', 1),
-	(15, 12, 12, '2022-11-09 20:20:00', 0, 0, NULL, 'Inactivo', '8', 1),
-	(16, 12, 12, '2022-11-30 19:20:00', 0, 0, NULL, 'Inactivo', '8', 1),
-	(17, 12, 12, '2022-11-03 22:20:00', 0, 0, NULL, 'Inactivo', '8', 1),
-	(18, 12, 12, '2022-11-24 19:22:00', 0, 0, NULL, 'Inactivo', '8', 1),
-	(19, 14, 12, '2022-11-10 21:21:00', 0, 0, NULL, 'Inactivo', '1', 1),
-	(20, 12, 12, '2022-11-16 21:21:00', 0, 0, NULL, 'Inactivo', '8', 1),
-	(21, 12, 12, '2022-11-10 19:26:00', 0, 0, NULL, 'Inactivo', '1', 1),
-	(22, 12, 12, '2022-11-01 23:21:00', 0, 0, NULL, 'Inactivo', '8', 1),
-	(23, 12, 12, '2022-11-09 22:21:00', 0, 0, NULL, 'Inactivo', '8', 1),
-	(24, 12, 12, '2022-11-24 22:22:00', 0, 0, NULL, 'Inactivo', '4', 1),
-	(25, 12, 12, '2022-11-30 00:22:00', 0, 0, NULL, 'Inactivo', '4', 1),
-	(26, 12, 12, '2022-11-15 23:22:00', 0, 0, NULL, 'Inactivo', '4', 1),
-	(27, 12, 12, '2022-11-09 22:22:00', 0, 0, NULL, 'Inactivo', '4', 1),
-	(28, 12, 12, '2022-11-03 22:22:00', 0, 0, NULL, 'Inactivo', '2', 1),
-	(29, 12, 12, '2022-11-16 23:22:00', 0, 0, NULL, 'Inactivo', '2', 1);
+	(1, 12, 27, '2022-11-20 11:00:00', 2, 0, 12, 'Finalizado', 'A', 1),
+	(5, 7, 29, '2022-11-28 10:00:00', 3, 3, NULL, 'Finalizado', 'G', 6),
+	(6, 18, 12, '2022-11-25 10:00:00', 1, 1, NULL, 'Finalizado', 'A', 4),
+	(8, 19, 20, '2022-11-21 17:00:00', 6, 2, NULL, 'Finalizado', 'B', 6),
+	(9, 28, 18, '2022-11-21 08:00:00', 0, 2, NULL, 'Finalizado', 'A', 4),
+	(10, 14, 16, '2022-11-21 23:00:00', 1, 1, NULL, 'Finalizado', 'B', 1),
+	(11, 4, 3, '2022-11-22 17:00:00', 1, 2, NULL, 'Finalizado', 'C', 7),
+	(12, 11, 31, '2022-11-22 20:00:00', 0, 0, NULL, 'Finalizado', 'D', 5),
+	(13, 24, 25, '2022-11-22 23:00:00', 0, 0, NULL, 'Finalizado', 'C', 2),
+	(15, 15, 5, '2022-11-22 14:00:00', 4, 1, NULL, 'Finalizado', 'D', 3),
+	(16, 23, 10, '2022-11-23 17:00:00', 0, 0, NULL, 'Finalizado', 'F', 2),
+	(17, 2, 21, '2022-11-23 20:00:00', 1, 2, NULL, 'Finalizado', 'E', 6),
+	(18, 13, 9, '2022-11-23 23:00:00', 7, 0, NULL, 'Finalizado', 'E', 4),
+	(19, 6, 8, '2022-11-23 14:00:00', 1, 0, NULL, 'Finalizado', 'F', 1),
+	(20, 30, 7, '2022-11-24 17:00:00', 1, 0, NULL, 'Finalizado', 'G', 3),
+	(21, 32, 22, '2022-11-24 20:00:00', 0, 0, NULL, 'Finalizado', 'H', 5),
+	(22, 26, 17, '2022-11-24 23:00:00', 3, 2, NULL, 'Finalizado', 'H', 8),
+	(23, 1, 29, '2022-11-24 14:00:00', 2, 0, NULL, 'Finalizado', 'G', 7),
+	(24, 16, 20, '2022-11-25 17:00:00', 0, 2, NULL, 'Finalizado', 'B', 1),
+	(25, 27, 28, '2022-11-25 17:00:00', 1, 3, NULL, 'Finalizado', 'A', 4),
+	(26, 18, 12, '2022-11-25 20:00:00', 1, 1, NULL, 'Finalizado', 'A', 6),
+	(27, 19, 14, '2022-12-01 10:00:00', 0, 0, NULL, 'Finalizado', 'B', 2),
+	(28, 31, 5, '2022-11-26 17:00:00', 0, 1, NULL, 'Finalizado', 'D', 3),
+	(29, 25, 3, '2022-11-26 20:00:00', 2, 0, NULL, 'Finalizado', 'C', 5),
+	(30, 15, 11, '2022-11-26 23:00:00', 2, 0, NULL, 'Finalizado', 'D', 8),
+	(31, 4, 24, '2022-11-26 14:00:00', 2, 0, NULL, 'Finalizado', 'C', 7),
+	(32, 21, 9, '2022-11-27 17:00:00', 0, 1, NULL, 'Finalizado', 'E', 1),
+	(33, 6, 23, '2022-11-27 20:00:00', 0, 2, NULL, 'Finalizado', 'F', 4),
+	(34, 10, 8, '2022-11-27 23:00:00', 4, 1, NULL, 'Finalizado', 'F', 6),
+	(35, 13, 2, '2022-11-27 14:00:00', 1, 1, NULL, 'Finalizado', 'E', 2),
+	(36, 7, 29, '2022-11-28 17:00:00', 3, 3, NULL, 'Finalizado', 'G', 3),
+	(37, 22, 17, '2022-11-28 20:00:00', 2, 3, NULL, 'Finalizado', 'H', 5),
+	(38, 1, 30, '2022-11-28 14:00:00', 1, 0, NULL, 'Finalizado', 'G', 8),
+	(39, 26, 32, '2022-11-28 14:00:00', 2, 0, NULL, 'Finalizado', 'H', 7),
+	(40, 12, 28, '2022-11-29 22:00:00', 1, 2, NULL, 'Finalizado', 'A', 6),
+	(41, 18, 27, '2022-11-29 22:00:00', 2, 0, NULL, 'Finalizado', 'A', 2),
+	(42, 20, 14, '2022-11-29 14:00:00', 0, 1, NULL, 'Finalizado', 'B', 4),
+	(43, 16, 19, '2022-11-29 14:00:00', 0, 3, NULL, 'Finalizado', 'B', 1),
+	(44, 31, 15, '2022-11-30 22:00:00', 1, 0, NULL, 'Finalizado', 'D', 5),
+	(45, 5, 11, '2022-11-30 22:00:00', 1, 0, NULL, 'Finalizado', 'D', 3),
+	(46, 25, 4, '2022-11-30 14:00:00', 0, 2, NULL, 'Finalizado', 'C', 8),
+	(47, 3, 24, '2022-11-30 22:00:00', 1, 2, NULL, 'Finalizado', 'C', 7),
+	(48, 18, 14, '2022-12-03 10:00:00', 0, 0, NULL, 'Inactivo', '8', 7),
+	(49, 4, 5, '2022-12-03 14:00:00', 0, 0, NULL, 'Inactivo', '8', 1),
+	(50, 15, 25, '2022-12-04 10:00:00', 0, 0, NULL, 'Inactivo', '8', 4),
+	(51, 19, 28, '2022-12-04 14:00:00', 0, 0, NULL, 'Inactivo', '8', 2);
 /*!40000 ALTER TABLE `partidos` ENABLE KEYS */;
 
 -- Volcando estructura para tabla humanrightsaresecondary.usuarios
@@ -810,15 +838,14 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   KEY `Nombre` (`Nombre`),
   KEY `FK_usuarios_equipos` (`id_equipo_fav`),
   CONSTRAINT `FK_usuarios_equipos` FOREIGN KEY (`id_equipo_fav`) REFERENCES `equipos` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla humanrightsaresecondary.usuarios: ~3 rows (aproximadamente)
+-- Volcando datos para la tabla humanrightsaresecondary.usuarios: ~0 rows (aproximadamente)
 DELETE FROM `usuarios`;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
 INSERT INTO `usuarios` (`id`, `Username`, `Password`, `Nombre`, `Email`, `Rank`, `id_equipo_fav`) VALUES
 	(34, 'RoyGCC', '12345', 'Roy', 'roycarrington20@gmail.com', 'user', 3),
-	(35, 'MiguelV', '1234', 'Miguel', 'roygcc2009@gmail.com', 'admin', 12),
-	(38, 'mvrobot', '1234', 'miguel', 'aaa@gnail.com', 'user', 16);
+	(35, 'MiguelV', '1234', 'Miguel', 'roygcc2009@gmail.com', 'admin', 12);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
