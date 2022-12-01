@@ -41,8 +41,8 @@ function headerTemplateAdminLogged() {
                     <li>\
                     <a style="text-decoration: none;color: #7f1947;margin-right:50px;">Menu   ▾</a>\
                     <ul class="dropdown">\
-                        <li><a style="text-decoration: none;color: #7f1947;" href="admin.php">Admin</a></li>\
-                        <li><a style="text-decoration: none;color: #7f1947;" href="logout.php">Cerrar Sesion</a></li>\
+                        <li><a style="text-decoration: none;color: #7f1947;" href="admin_opt.php">Admin</a></li>\
+                        <li><a style="text-decoration: none;color: #7f1947;" href="logout.php">Logout</a></li>\
                     </ul>\
                     </li>\
                     </ul>\

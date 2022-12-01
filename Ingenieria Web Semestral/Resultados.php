@@ -1,10 +1,6 @@
 <?php
 include('phpscripts.php');
 session_start();
-if (!empty($_SESSION['user'])) {
-     echo $_SESSION['user'];
-     echo $_SESSION['myrank'];
-}
 ?>
 <html>
 

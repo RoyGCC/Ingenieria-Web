@@ -3,8 +3,6 @@ include('phpscripts.php');
 include('config.php');
 session_start();
 if (!empty($_SESSION['user'])) {
-    echo $_SESSION['user'];
-    echo $_SESSION['myrank'];
 } else {
     header('Location:Equipos.php');
 }
@@ -28,7 +26,7 @@ if (!empty($_SESSION['user'])) {
                     <a>
                          <h1 style="font-family: var(--fuente_titulos); color: #7f1947; display:border-box;">No tienes nigun equipo como favorito</h1>
                     </a>
-                    <span>Vuelve y elige el tuyo;recuerda que el fanatismo es la mejor forma para controlar las masas Y en Qatar no encanta el control =)</span>
+                    <span>Vuelve y elige el tuyo;recuerda que el fanatismo es la mejor forma para controlar las masas Y en Qatar nos encanta el control =)</span>
                </div>
           </div>
     </section>

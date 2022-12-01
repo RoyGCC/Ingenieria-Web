@@ -2,10 +2,6 @@
 
 session_start();
 include "acceso.php";
-if (!empty($_SESSION['user'])) {
-     echo $_SESSION['user'];
-     echo $_SESSION['myrank'];
-}
 ?>
 <html>
 <head>
@@ -26,8 +22,12 @@ if (!empty($_SESSION['user'])) {
                     <a>
                          <h1 style="font-family: var(--fuente_titulos); color: #7f1947;">Estadios</h1>
                     </a>
-                    <span>Nuestros affd ocho espectaculares estadios de la Copa Mundial de la FIFA Qatar 2022™ están listos para recibir al mundo.</span>
+                    <span>Nuestros ocho espectaculares estadios de la Copa Mundial de la FIFA Qatar 2022™ están listos para recibir al mundo.</span>
+               
+                    
+               
                </div>
+               <input class="homein" type="submit" value="Ver más" onclick="window.location.replace('https://www.telesurtv.net/news/conoce-estadios-mundial-futbol-qatar-20221115-0026.html')">
           </div>
           <div class="contenidoextra">
                <img class="estadio" src="resources/img/fiesta.jpg">
@@ -37,7 +37,9 @@ if (!empty($_SESSION['user'])) {
                     </a>
                     <span style="text-decoration:line-through;">Destinos de entretenimiento, mega atracciones, descubrimiento cultural, aventuras sin fin y mucho más.</span>
                     <span>Hay que respetar la Sharia</span>
+                    
                </div>
+               <input class="homein" type="submit" value="Ver más"  onclick="window.location.replace('https://www.icsve.org/you-must-join-the-islamic-state/')">
           </div>
           <div class="contenidoextra">
                <img class="estadio" src="resources/img/Laeeb.jpg">
@@ -46,7 +48,9 @@ if (!empty($_SESSION['user'])) {
                          <h1 style="font-family: var(--fuente_titulos); color: #7f1947;">Mascota Oficial</h1>
                     </a>
                     <span>Soy tu mejor compañero de fútbol del universo de las mascotas.</span>
+                    
                </div>
+               <input class="homein" type="submit" value="Ver más" onclick="window.location.replace('https://www.facebook.com/watch/?v=1033223347547413')">
           </div>
           <div class="contenidoextra">
                <img class="estadio" src="resources/img/qatarRules.webp">
@@ -55,7 +59,9 @@ if (!empty($_SESSION['user'])) {
                          <h1 style="font-family: var(--fuente_titulos); color: #7f1947;">Prohibiciones</h1>
                     </a>
                     <span>La cultura Catarí no permite los siguientes comportamientos.<br> Recuerda que los derechos humanos son opcionales aquí</span>
+                    
                </div>
+               <input class="homein" type="submit" value="Ver más" onclick="window.location.replace('https://islamonline.net/en/category/sharia/')">
           </div>
      </section>
 

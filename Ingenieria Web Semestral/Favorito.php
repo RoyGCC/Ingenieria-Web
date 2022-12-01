@@ -3,8 +3,6 @@ include('phpscripts.php');
 include('config.php');
 session_start();
 if (!empty($_SESSION['user'])) {
-     echo $_SESSION['user'];
-     echo $_SESSION['myrank'];
      $user = quick_user($_SESSION['user']);
      if($user['id_equipo_fav'] == null){
           header('Location:nofav.php');
