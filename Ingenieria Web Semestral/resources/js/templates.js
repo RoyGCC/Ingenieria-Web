@@ -37,7 +37,7 @@ function headerTemplateAdminLogged() {
     document.getElementById("general_header").innerHTML = '<header class="header-home inline-container">\
                     <a href="Home.php"><img src="resources/img/Logo.png" alt="IconSoloCiencia"></a>\
                     <h1 style = "font-family: var(--fuente_Header) ;">\
-                    <ul class>\
+                    <ul class="dpm">\
                     <li>\
                     <a style="text-decoration: none;color: #7f1947;">Mas opciones▾</a>\
                     <ul class="dropdown">\
